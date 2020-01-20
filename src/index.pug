@@ -9,21 +9,23 @@ html(lang="en")
     title Mountains
   body
     .wrapper
-      .welcome-section
+      .welcome
 
         include ./templates/promo.pug 
 
         include ./templates/about.pug
         
-        include ./templates/benefit.pug
+      include ./templates/benefit.pug
                 
-        include ./templates/work.pug
+      include ./templates/work.pug
 
+      .section-wrapp
+      
         include ./templates/reviews.pug
 
         include ./templates/contacts.pug
 
-        //- include ./templates/footer.pug
+      include ./templates/footer.pug
 
 
 

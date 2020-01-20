@@ -1,0 +1,18 @@
+//- ul.social__list
+//-     li.social__item
+//-         a.social__link(href="#")
+//-             +icon('insta', 'social__header')
+//-     li.social__item
+//-         a.social__link(href="#")
+//-             +icon('vk', 'social__header')
+//-     li.social__item
+//-         a.social__link(href="#")
+//-             +icon('github', 'social__header')
+mixin socials(mod)
+    - var icons = ["insta", "vk", "github"]
+    - var link = ["https://www.instagram.com/shigaevalex/", "https://vk.com/alexgsh", "https://github.com/alexgsh" ]
+    ul.socials__list
+        each item, index in icons
+            li(class="socials__item socials__item--" + mod) 
+                a.socials__link(href=`${link[index]}` target="_blank")
+                    +icon(item, "socials__icon socials__icon--" + mod)

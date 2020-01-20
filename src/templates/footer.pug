@@ -1,0 +1,18 @@
+footer.footer
+    .container.footer__container
+        .footer__left
+            .footer__year &copy 2019
+            .footer__info-user Юрий <br> Кочергин
+                .footer__info-text Личный сайт <br> веб-разработчика
+        .footer__right
+            .footer__nav
+                include ./nav.pug
+            .footer__info-desc
+                .footer__info-left
+                    .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                    .footer__social
+                        include ./socials.pug
+                        +socials("footer")  
+                .footer__info-right
+                    .footer__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                    .footer__text-autor Martin Golding
