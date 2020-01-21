@@ -1,11 +1,24 @@
 .slider__main {
-    position: relative;
-    width: 977px;
-    height: 549px;
+  position: relative;
+  width: 977px;
+  height: 549px;
 }
 
 .slider__prev-list {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.slider__prev-item {
+  border: 2px solid transparent;
+  &:hover {
+    border: 2px solid $purple;
+  }
+}
+
+.slider__prev-link:hover {
+  display: block;
+  height: 100%;
+  width: 100%;
 }

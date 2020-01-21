@@ -2,7 +2,8 @@
   display: flex;
 }
 
-.slider__btn {
+.slider__btn--prev,
+.slider__btn--next {
   height: 50px;
   width: 50px;
   background: black;
@@ -10,6 +11,12 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  &:hover {
+    .slider__btn-prev,
+    .slider__btn-next {
+      fill: $purple;
+    }
+  }
 }
 
 .slider__btn-prev {

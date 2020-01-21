@@ -6,13 +6,12 @@ footer.footer
                 .footer__info-text Личный сайт <br> веб-разработчика
         .footer__right
             .footer__nav
-                include ./nav.pug
+                +nav("nav", ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"], ["promo", "about", "skill", "work", "reviews", "contact"])
             .footer__info-desc
                 .footer__info-left
                     .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
                     .footer__social
-                        include ./socials.pug
-                        +socials("footer")  
+                        +social("footer")  
                 .footer__info-right
                     .footer__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                     .footer__text-autor Martin Golding

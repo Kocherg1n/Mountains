@@ -2,8 +2,6 @@ header.header.promo__header
     .promo__logo(tabindex ="0")
         include ./logo.pug
     .promo__menu
-        include ./nav.pug
-    .promo__socials
-        //- include ./social-header.pug
-        include ./socials.pug
-        +socials("header")
+        +nav("nav", ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"], ["promo", "about", "skill", "work", "reviews", "contact"])
+    .promo__social
+        +social("header")
