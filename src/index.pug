@@ -9,14 +9,28 @@ html(lang="en")
     title Mountains
   body
     .wrapper
-      .welcome
+      .parallax
+        .parallax__layer(data-speed="0.1")
+          img(src="./src/images/parallax/sky.png").parallax__image
+        .parallax__layer(data-speed="0.25")
+          img(src="./src/images/parallax/mountain.png").parallax__image
+        .parallax__layer(data-speed="0.35")
+          img(src="./src/images/parallax/Baloon.png").parallax__image
+        .parallax__layer(data-speed="0.38")
+          img(src="./src/images/parallax/cloud.png").parallax__image
+        .parallax__layer(data-speed="0.45")
+          img(src="./src/images/parallax/Man.png").parallax__image
+        .parallax__layer(data-speed="0.52")
+          img(src="./src/images/parallax/mountain1.png").parallax__image
+        .parallax__layer(data-speed="0.56")
+          img(src="./src/images/parallax/white.png").parallax__image
 
         include ./templates/promo.pug 
 
         include ./templates/about.pug
         
       include ./templates/benefit.pug
-                
+
       include ./templates/work.pug
 
       .section-wrapp
@@ -26,53 +40,3 @@ html(lang="en")
         include ./templates/contacts.pug
 
       include ./templates/footer.pug
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
-
-        
-        
-        
-        
-        
-      
-        
-              
-        
-       
-          
-
-
-
-
-
-
-                
-
-                
-
-                
-          
-
-    
-
-
-
