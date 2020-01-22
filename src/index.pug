@@ -1,7 +1,7 @@
 include ./mixins.pug
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -9,34 +9,14 @@ html(lang="en")
     title Mountains
   body
     .wrapper
-      .parallax
-        .parallax__layer(data-speed="0.1")
-          img(src="./src/images/parallax/sky.png").parallax__image
-        .parallax__layer(data-speed="0.25")
-          img(src="./src/images/parallax/mountain.png").parallax__image
-        .parallax__layer(data-speed="0.35")
-          img(src="./src/images/parallax/Baloon.png").parallax__image
-        .parallax__layer(data-speed="0.38")
-          img(src="./src/images/parallax/cloud.png").parallax__image
-        .parallax__layer(data-speed="0.45")
-          img(src="./src/images/parallax/Man.png").parallax__image
-        .parallax__layer(data-speed="0.52")
-          img(src="./src/images/parallax/mountain1.png").parallax__image
-        .parallax__layer(data-speed="0.56")
-          img(src="./src/images/parallax/white.png").parallax__image
-
-        include ./templates/promo.pug 
-
-        include ./templates/about.pug
-        
+      include ./templates/header.pug  
+      include ./templates/parallax.pug
       include ./templates/benefit.pug
-
       include ./templates/work.pug
-
-      .section-wrapp
-      
-        include ./templates/reviews.pug
-
-        include ./templates/contacts.pug
-
+      include ./templates/parallax-reviews.pug
       include ./templates/footer.pug
+
+
+
+
+

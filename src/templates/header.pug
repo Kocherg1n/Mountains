@@ -1,7 +1,10 @@
-header.header.promo__header
-    .promo__logo
-        include ./logo.pug
-    .promo__menu
-        +nav("nav", ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"], ["promo", "about", "skill", "work", "reviews", "contact"])
-    .promo__social
-        +social("header")  
+header.header
+    .container.header__container
+        .promo__logo
+            include ./logo.pug
+        .promo__menu
+            include ./nav.pug
+            +nav("nav", ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"], ["promo", "about", "skill", "work", "reviews", "contact"])
+        .promo__social
+            include ./social.pug
+            +social("header")  

@@ -1,0 +1,12 @@
+mixin social(className)
+    - var icons = ["insta", "vk", "github"]
+    - var link = ["#", "https://vk.ru", "#" ]
+    .social
+        ul.social__list
+            each item, index in icons
+                li(class="social__item social__item--" + className) 
+                    a.social__link(href=`${link[index]}` target="_blank")
+                        +icon(item, "social__icon social__icon--" + className)
+
+
+                        

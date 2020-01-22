@@ -3,35 +3,16 @@ mixin icon(name, className)
   svg(class=className viewBox=icon.viewBox preserveAspectRatio="none")
     use(xlink:href=icon.url)
 
+//- mixin image(path, className, description, attrRole)
+//-   img(src=require(`images/${path}`) class=className)
 
 
-mixin image(path, className)
-  img(src=require(`images/${path}`) class=className)
-
-
-
-mixin social(className)
-    - var icons = ["insta", "vk", "github"]
-    - var link = ["#", "https://vk.ru", "#" ]
-    ul.social__list
-        each item, index in icons
-            li(class="social__item social__item--" + className) 
-                a.social__link(href=`${link[index]}` target="_blank")
-                    +icon(item, "social__icon social__icon--" + className)
+mixin image(path, className, description, attrRole)
+  if role
+    img(src=require(`images/${path}`) class=className role= attrRole)
+  else
+    img(src=require(`images/${path}`) class=className alt=description)
 
 
 
-mixin nav(className, items, href)
-    - var link = ["#promo", "#about", "#skills", "#work", "#reviews", "#contacts"];
-    nav(class=`${className}`)
-        ul(class=`${className}__list`)
-            each item, index in items
-                li(class=`${className}__item`)
-                    a(href=`${link[index]}` class=`${className}__link`)= item
-
-
-  
-
-        
-    
 
