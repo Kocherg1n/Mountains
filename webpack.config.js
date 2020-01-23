@@ -9,7 +9,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = '';
+  const publicPath = "/";
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -30,7 +30,7 @@ module.exports = (env, argv) => {
     loader: "babel-loader",
     exclude: /node_modules/,
     options: {
-      presets: ['@babel/preset-env'],
+      presets: ["@babel/preset-env"],
       plugins: ["@babel/plugin-syntax-dynamic-import"]
     }
   };
@@ -45,7 +45,8 @@ module.exports = (env, argv) => {
 
   const svg = {
     test: /\.svg$/,
-    use: [{
+    use: [
+      {
         loader: "svg-sprite-loader",
         options: {
           extract: true,
@@ -56,9 +57,8 @@ module.exports = (env, argv) => {
       {
         loader: "svgo-loader",
         options: {
-          plugins: [{
-              removeTitle: true
-            },
+          plugins: [
+            { removeTitle: true },
             {
               removeAttrs: {
                 attrs: "(fill|stroke)"
@@ -72,7 +72,8 @@ module.exports = (env, argv) => {
 
   const pug = {
     test: /\.pug$/,
-    oneOf: [{
+    oneOf: [
+      {
         resourceQuery: /^\?vue/,
         use: ["pug-plain-loader"]
       },
@@ -121,9 +122,7 @@ module.exports = (env, argv) => {
         filename: "admin/index.html",
         chunks: ["admin"]
       }),
-      new SpriteLoaderPlugin({
-        plainSprite: true
-      }),
+      new SpriteLoaderPlugin({ plainSprite: true }),
       new VueLoaderPlugin()
     ],
     devtool: "#eval-source-map"
