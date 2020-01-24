@@ -10,8 +10,7 @@ const generateUsername = name => {
 
 const registerUser = (name, password) => {
   signale.await("Отправляем запрос");
-  request.post(
-    {
+  request.post({
       url: config.REG_URL,
       form: {
         name,
@@ -20,9 +19,9 @@ const registerUser = (name, password) => {
     },
     (err, response, body) => {
       if (err) signale.fatal(err);
-      
+
       console.log(response.statusCode);
-      
+
 
       switch (response.statusCode) {
         case 302:

@@ -1,0 +1,38 @@
+.slider__buttons--rev {
+  display: flex;
+  width: 130px;
+  justify-content: space-between;
+}
+
+.slider__btn--rev {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 100;
+  &:hover {
+    border-color: $purple;
+    .slider__btn-next-black,
+    .slider__btn-prev-black {
+      fill: $purple;
+    }
+  }
+}
+
+.slider__btn-next-black {
+  width: 8px;
+  height: 10px;
+  fill: black;
+  transform: rotate(0deg);
+}
+
+.slider__btn-prev-black {
+  width: 8px;
+  height: 10px;
+  fill: black;
+  transform: rotate(180deg);
+}

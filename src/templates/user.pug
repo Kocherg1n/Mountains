@@ -1,0 +1,16 @@
+.user
+    .user__avatar
+        +image("content/user.jpg", "user__avatar-pic", "Фотография автора", "")
+    .user__desc
+        - 
+            var rows = [
+            ['Проживаю', 'Москва'],
+            ['Возраст', '32'],
+            ['Родился', '28.05.1987']
+            ];
+        .user__data
+            table.user__data-table.text
+                 each row in rows
+                    tr.user__data-row
+                        each cell in row
+                            td #{cell}       
