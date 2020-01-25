@@ -1,0 +1,115 @@
+/* Иконка меню гамбургер*/
+.hamburger__btn {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+  @include tablets {
+    display: flex;
+    margin-left: 60px;
+  }
+}
+
+.hamburger-menu-icon {
+  height: 5px;
+  width: 30px;
+  background-color: black;
+  position: relative;
+  cursor: pointer;
+  border-radius: 2px;
+
+  &::before {
+    content: "";
+    height: 5px;
+    width: 30px;
+    position: absolute;
+    background-color: black;
+    bottom: 8px;
+    border-radius: 2px;
+    transition: transform 0.2s ease-in, bottom 0.2s linear 0.2s;
+  }
+
+  &::after {
+    content: "";
+    height: 5px;
+    width: 30px;
+    position: absolute;
+    background-color: black;
+    top: 8px;
+    border-radius: 2px;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+  }
+}
+
+.hamburger-menu-icon.hamburger-menu-icon--active {
+  background-color: transparent;
+}
+
+.hamburger-menu-icon.hamburger-menu-icon--active::before {
+  transform: rotate(45deg);
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+  bottom: 0;
+}
+
+.hamburger-menu-icon.hamburger-menu-icon--active::after {
+  transform: rotate(-45deg);
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+  top: 0;
+}
+
+/* Меню выплывающее */
+
+.hamburger {
+  position: absolute;
+  width: 40%;
+  height: 100vh;
+  background-color: $white;
+  right: -50%;
+  top: 0;
+  padding: 30% 10% 20% 10%;
+  transition: 0.4s;
+  @include phones {
+    padding: 0 0 0 20%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+  }
+}
+
+.hamburger--active {
+  right: 0;
+  @include phones {
+    width: 100%;
+  }
+}
+
+.hamburger-nav {
+  display: flex;
+  text-decoration: none;
+}
+
+.hamburger-nav__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.hamburger-nav__item {
+  margin-bottom: 35px;
+  @include phones {
+    margin-bottom: 15px;
+  }
+}
+
+.hamburger-nav__link {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 48px;
+}

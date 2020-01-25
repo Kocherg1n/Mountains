@@ -1,3 +1,11 @@
+/* Навигация desktop  */
+
+.nav {
+  @include desktop {
+    display: none;
+  }
+}
+
 .nav__list {
   display: flex;
 }
@@ -17,4 +25,9 @@
 .nav__link:hover {
   color: $purple;
 }
-/*  */
+
+/* Навигация tablets */
+
+.hamburger-nav__item:hover {
+  color: $purple;
+}
