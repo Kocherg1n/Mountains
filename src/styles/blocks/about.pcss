@@ -10,14 +10,30 @@
 .about__content {
   display: flex;
   justify-content: center;
+  @include desktop {
+    justify-content: space-between;
+  }
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .about__user-data {
   width: 31%;
+  @include phones {
+    width: 100%;
+  }
 }
 
 .about__user-desc {
   width: 40%;
+  @include desktop {
+    width: 60%;
+  }
+  @include phones {
+    width: 100%;
+    padding-bottom: 26%;
+  }
 }
 
 .about__prolog {

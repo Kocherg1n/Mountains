@@ -6,10 +6,23 @@
   display: flex;
 }
 
+.social__link {
+  display: flex;
+}
+
 .social__item--header {
   margin-right: 40px;
   &:last-child {
     margin-right: 0;
+  }
+}
+
+.social__icon--header {
+  width: 25px;
+  height: 25px;
+  fill: black;
+  &:hover {
+    fill: $purple;
   }
 }
 
@@ -32,15 +45,6 @@
   }
 }
 
-.social__icon--header {
-  width: 25px;
-  height: 25px;
-  fill: black;
-  &:hover {
-    fill: $purple;
-  }
-}
-
 .social__icon--footer {
   position: absolute;
   top: 50%;
@@ -52,5 +56,21 @@
   opacity: 0.5;
   &:hover {
     opacity: 1;
+  }
+}
+
+.social--hamburger {
+  margin-left: 0;
+  margin-top: 60px;
+  margin-top: 0;
+}
+
+.social__icon--hamburger {
+  width: 25px;
+  height: 25px;
+  fill: black;
+  margin-right: 40px;
+  &:hover {
+    fill: $purple;
   }
 }
