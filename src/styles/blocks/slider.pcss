@@ -1,11 +1,13 @@
 .slider {
   position: relative;
+  width: 80%;
+  /* @include tablets {
+    width: 620px;
+  } */
 }
 
 .slider__main {
   position: relative;
-  width: 977px;
-  height: 549px;
 }
 
 .slider__prev-list {
@@ -29,4 +31,12 @@
 
 .slider__prev-btn {
   display: block;
+}
+
+.slider__prev-item {
+  @include tablets {
+    .slider__prev-item:nth-child(1) {
+      display: none;
+    }
+  }
 }

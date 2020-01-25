@@ -6,11 +6,18 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 55px;
+  @include tablets {
+    padding-bottom: 30px;
+  }
 }
 
 .skill__title {
   font-size: 24px;
   margin-bottom: 30px;
+  @include tablets {
+    text-align: center;
+    margin-bottom: 5px;
+  }
 }
 
 .skill__item {

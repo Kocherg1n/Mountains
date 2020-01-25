@@ -6,6 +6,11 @@
 
 .work__content {
   display: flex;
+  @include desktop {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
 }
 
 /* .work__slider-btn-block {

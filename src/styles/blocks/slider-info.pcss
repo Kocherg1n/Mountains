@@ -2,6 +2,19 @@
   position: relative;
   padding-left: 155px;
   width: 40%;
+  @include desktop {
+    padding: 0 0 0 10%;
+  }
+  @include tablets {
+    padding: 10% 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    align-items: center;
+    position: static;
+  }
 }
 
 .slider-info__number {
@@ -9,9 +22,14 @@
   color: #e6e6e6;
   font-size: 400px;
   font-weight: 800;
-  left: -15%;
-  bottom: 5%;
   z-index: -1;
+  left: -14%;
+  bottom: 23%;
+  @include desktop {
+    left: -18%;
+    bottom: 18%;
+    font-size: 355px;
+  }
 }
 
 .slider-info__tags {
@@ -25,6 +43,9 @@
   background-color: #859fc2;
   opacity: 0.5;
   margin-right: 20px;
+  @include desktop {
+    margin-right: 5px;
+  }
   &:last-child {
     margin-right: 0;
   }
