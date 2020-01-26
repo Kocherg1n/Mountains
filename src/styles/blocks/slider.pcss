@@ -1,9 +1,15 @@
 .slider {
   position: relative;
   width: 80%;
-  /* @include tablets {
-    width: 620px;
-  } */
+  @include desktop {
+    width: 55%;
+  }
+  @include tablets {
+    width: 90%;
+  }
+  @include phones {
+    width: 100%;
+  }
 }
 
 .slider__main {
@@ -14,6 +20,14 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  @include desktop {
+    overflow: hidden;
+    height: 300px;
+  }
+  @include phones {
+    overflow: hidden;
+    height: 0;
+  }
 }
 
 .slider__prev-item,
@@ -31,6 +45,8 @@
 
 .slider__prev-btn {
   display: block;
+  width: 178px;
+  height: 100px;
 }
 
 .slider__prev-item {

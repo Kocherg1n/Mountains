@@ -10,17 +10,23 @@
 }
 
 .benefit__content {
-  padding-left: 44%;
+  display: flex;
+  justify-content: flex-end;
   padding-top: 40px;
+  padding-right: 10%;
+  @include desktop {
+    padding-right: 5%;
+  }
   @include tablets {
     padding: 0;
     display: flex;
     justify-content: center;
+    padding-right: 0;
   }
 }
 
 .benefit__desc {
-  width: 32%;
+  width: 40%;
   margin: 0 auto;
   margin-bottom: 80px;
   @include tablets {
@@ -30,6 +36,10 @@
     flex-direction: column;
     padding: 0 22% 0 22%;
     margin-bottom: 30px;
+  }
+  @include phones {
+    padding: 0;
+    text-align: start;
   }
 }
 
@@ -43,10 +53,13 @@
 .benefit__pic {
   position: absolute;
   top: 35%;
-  right: 60%;
+  right: 65%;
   @include tablets {
     right: 25%;
     width: 45%;
     top: 70%;
+  }
+  @include phones {
+    top: 84%;
   }
 }

@@ -6,14 +6,20 @@
     padding: 0 0 0 10%;
   }
   @include tablets {
-    padding: 10% 0 0 0;
+    padding: 0 15% 0 15%;
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 50%;
+    width: 100%;
     align-items: center;
-    position: static;
+  }
+  @include phones {
+    padding: 0;
+    margin: 0;
+    margin-top: 10%;
+    text-align: start;
   }
 }
 
@@ -27,14 +33,24 @@
   bottom: 23%;
   @include desktop {
     left: -18%;
-    bottom: 18%;
+    bottom: 10%;
     font-size: 355px;
+  }
+  @include tablets {
+    left: 80%;
+    bottom: 113%;
+  }
+  @include phones {
+    display: none;
   }
 }
 
 .slider-info__tags {
   display: flex;
   margin-bottom: 45px;
+  @include phones {
+    margin-right: auto;
+  }
 }
 
 .slider-info__tag {
@@ -73,6 +89,9 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+  @include phones {
+    margin-right: auto;
+  }
   &:hover {
     color: $purple;
     fill: $purple;

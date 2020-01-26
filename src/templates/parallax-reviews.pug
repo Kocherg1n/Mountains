@@ -1,13 +1,13 @@
 .parallax-reviews
-    .parallax__layer-reviews(data-speed="0.1")
-        +image("parallax/Sky.png", "parallax__image-reviews", "", "presentation")
-    .parallax__layer-reviews(data-speed="0.25")
-        +image("parallax/Mountain.png", "parallax__image-reviews", "", "presentation")
-    .parallax__layer-reviews(data-speed="0.35")
-        +image("parallax/buddha.png", "parallax__image-reviews", "", "presentation")
-    .parallax__layer-reviews(data-speed="0.38")
-        +image("parallax/White.png", "parallax__image-reviews", "", "presentation")
-    .parallax__layer-reviews(data-speed="0.38")
-        +image("parallax/clouds_1.png", "parallax__image-reviews", "", "presentation")
+    .parallax-reviews__layer(data-speed="20")
+        +image("parallax/Sky.png", "parallax__image-reviews-sky", "", "presentation")
+    .parallax-reviews__layer(data-speed="50")
+        +image("parallax/Mountain.png", "parallax__image-reviews-mountain", "", "presentation")
+    .parallax-reviews__layer(data-speed="90")
+        +image("parallax/buddha.png", "parallax__image-reviews-buddha", "", "presentation")
+    .parallax-reviews__layer(data-speed="110")
+        +image("parallax/White.png", "parallax__image-reviews-white", "", "presentation")
+    .parallax-reviews__layer(data-speed="140")
+        +image("parallax/clouds_1.png", "parallax__image-reviews-clouds1", "", "presentation")
     include ./reviews.pug
-    include ./contacts.pug
+    include ./contacts.pug 
