@@ -1,14 +1,33 @@
 .slider-reviews__list {
   display: flex;
+  @include phones {
+    overflow: hidden;
+  }
+  @include m-phones {
+    overflow: hidden;
+  }
 }
 
 .slider-reviews__item {
   display: flex;
-  margin-right: 138px;
+  margin-right: 10%;
+  &:last-child {
+    margin-right: 0px;
+  }
+  @include tablets {
+    margin-right: 5%;
+  }
 }
 
 .slider-reviews__block {
-  width: 300px;
+  max-width: 300px;
+  @include phones {
+    min-width: 340px;
+    width: 100vw;
+  }
+  @include m-phones {
+    min-width: 260px;
+  }
 }
 
 .slider-reviews__text {
@@ -55,4 +74,11 @@
   fill: #464d62;
   opacity: 0.5;
   margin-right: 20px;
+  @include tablets {
+    width: 36px;
+    height: 31px;
+  }
+  @include m-phones {
+    display: none;
+  }
 }

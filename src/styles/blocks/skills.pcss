@@ -1,37 +1,61 @@
 .skills {
-  width: 74%;
-}
-
-.skill__list {
   display: flex;
-  justify-content: space-between;
-  padding-bottom: 55px;
+  flex-direction: column;
 }
 
-.skill__title {
-  font-size: 24px;
-  margin-bottom: 30px;
-}
-
-.skill__item {
-  width: 135px;
-  height: 135px;
-  border: 5px solid gray;
-  border-radius: 50%;
+.skills__list {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.5;
+  flex-wrap: wrap;
+  @include tablets {
+    justify-content: center;
+  }
 }
 
-.skill__item-name {
-  opacity: 1;
-  font-family: "Open Sans";
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 48px;
+.skills__box {
+  display: inline-block;
+  position: relative;
+
+  &--svg-shape {
+    width: 168px;
+    fill: transparent;
+  }
+
+  &--svg-circle {
+    &--position-under {
+      fill: transparent;
+      stroke: #e9e9e9;
+      stroke-width: 10px;
+    }
+
+    &--position-above {
+      stroke-dasharray: 502;
+      stroke-width: 20px;
+      stroke: url(#gradient);
+      transform: rotate(180deg);
+      transform-origin: 50% 50%;
+      animation: skillProgress 100s linear infinite;
+      animation-play-state: paused;
+    }
+  }
+
+  &--title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(grey, 0.5);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+  }
 }
 
-.skill__item-name {
-  line-height: 30px;
+@keyframes skillProgress {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 100;
+  }
 }

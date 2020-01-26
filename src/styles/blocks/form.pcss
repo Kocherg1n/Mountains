@@ -1,18 +1,29 @@
 .form {
   width: 850px;
+  @include phones {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .form__row {
   display: flex;
   margin-bottom: 30px;
+  @include phones {
+    flex-direction: column;
+  }
 }
-/*  */
+
 .form__label {
   display: flex;
   flex-direction: column;
   flex: 1;
   margin-right: 95px;
   position: relative;
+  @include phones {
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
 }
 
 .form__label:last-child {
@@ -64,6 +75,13 @@
   font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
+  @include phones {
+    margin-bottom: 40px;
+    margin-top: 10px;
+  }
+  @include m-phones {
+    padding: 16px 80px;
+  }
   &:hover {
     background-image: linear-gradient(to right, #4a00ed 0%, #9300e8 100%);
   }

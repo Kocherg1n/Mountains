@@ -4,29 +4,62 @@
   padding-top: 14%;
   padding-bottom: 14%;
   position: relative;
-  /* background-image: url("/src/images/bg/bag.png");
-  background-position-y: 405px;
-  background-position-x: 20px;
-  background-repeat: no-repeat; */
+  @include tablets {
+    padding-bottom: 45%;
+  }
 }
 
 .benefit__content {
-  padding-left: 44%;
+  display: flex;
+  justify-content: flex-end;
   padding-top: 40px;
+  padding-right: 10%;
+  @include desktop {
+    padding-right: 5%;
+  }
+  @include tablets {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    padding-right: 0;
+  }
 }
 
 .benefit__desc {
-  width: 32%;
+  width: 40%;
   margin: 0 auto;
   margin-bottom: 80px;
+  @include tablets {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 22% 0 22%;
+    margin-bottom: 30px;
+  }
+  @include phones {
+    padding: 0;
+    text-align: start;
+  }
 }
 
 .benefit__title-text {
   margin-bottom: 30px;
+  @include tablets {
+    margin-bottom: 10px;
+  }
 }
 
 .benefit__pic {
   position: absolute;
   top: 35%;
-  right: 60%;
+  right: 65%;
+  @include tablets {
+    right: 25%;
+    width: 45%;
+    top: 70%;
+  }
+  @include phones {
+    top: 84%;
+  }
 }

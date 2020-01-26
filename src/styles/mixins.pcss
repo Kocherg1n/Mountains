@@ -23,7 +23,7 @@
 }
 
 @mixin m-phones() {
-  @media screen and (max-width: $mp-phones) {
+  @media screen and (min-width: $mp-phones) and (max-width: 450px) {
     @content;
   }
 }
