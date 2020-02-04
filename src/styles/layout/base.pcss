@@ -17,7 +17,7 @@ html {
 body {
   font-family: Open Sans, Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 1.42;
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
@@ -56,7 +56,7 @@ button {
 .title {
   font-size: 36px;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 1.8;
   &__contacts {
     margin-bottom: 64px;
     @include tablets {
@@ -83,18 +83,25 @@ button {
   &__skills {
     font-size: 24px;
     font-weight: 700;
-    line-height: 48px;
+    line-height: 1.8;
     @include tablets {
       text-align: center;
     }
   }
-}
 
-.text {
-  opacity: 0.5;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 30px;
+  &__admin {
+    font-size: 21px;
+    display: inline-block;
+    margin-right: 60px;
+    margin-bottom: 60px;
+    font-weight: 600;
+
+  }
+  &__form {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.8;
+  }
 }
 
 button {
@@ -147,3 +154,4 @@ img {
   max-width: 100%;
   max-height: 100%;
 }
+

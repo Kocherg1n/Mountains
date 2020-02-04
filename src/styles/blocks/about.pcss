@@ -30,6 +30,9 @@
 
 .about__user-desc {
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   @include desktop {
     width: 50%;
   }
@@ -41,9 +44,8 @@
 
 .about__prolog {
   margin-bottom: 20px;
-  opacity: 0.6;
   font-weight: 600;
-  line-height: 30px;
+  line-height: 1.8;
   @include phones {
     margin-bottom: 5px;
   }
@@ -53,7 +55,7 @@
   margin-bottom: 20px;
   font-size: 36px;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 1.8;
 }
 
 .about__text {
@@ -62,5 +64,5 @@
 
 .about__ps {
   font-style: italic;
-  line-height: 30px;
+  line-height: 1.8;
 }

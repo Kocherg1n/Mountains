@@ -1,7 +1,9 @@
 mixin nav(className, items, href)
-    - var link = ["#promo", "#about", "#skills", "#work", "#reviews", "#contacts"];
+    - var link = ["#promo", "#about", "#values", "#work", "#reviews", "#contacts"];
     nav(class=`${className}`)
         ul(class=`${className}__list`)
             each item, index in items
                 li(class=`${className}__item`)
                     a(href=`${link[index]}` class=`${className}__link`)= item
+
+

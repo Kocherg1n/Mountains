@@ -1,13 +1,13 @@
 form.form(action="http://")
     .form__row
-        label.form__label
-            input.form__input(required)
+        label(for="username").form__label
+            input.form__input(required id="username")
             +icon('user', 'form-user__icon')
-        label.form__label
-            input.form__input(required)
+        label(for="usermail").form__label
+            input.form__input(required d="usermail")
             +icon('envelope', 'form-user__icon')
     .form__row
-        label.form__label
-            textarea.form__textarea(required)
+        label(for="usermessage").form__label
+            textarea.form__textarea(required id="usermessage")
             +icon('message', 'form-mess__icon')
     button.form__btn-submit(type="submit") Отправить

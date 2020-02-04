@@ -20,7 +20,7 @@
 }
 
 .parallax__sky {
-  object-fit: cover;
+  object-fit: none;
   width: 100%;
   position: absolute;
 }
@@ -78,7 +78,18 @@
   height: 100%;
   object-fit: cover;
   position: absolute;
-
+  object-position: 46%;
+  @include desktop {
+    bottom: -900px;
+  }
+}
+.parallax__white2 {
+  bottom: -1900px;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  object-position: 46%;
   @include desktop {
     bottom: -900px;
   }

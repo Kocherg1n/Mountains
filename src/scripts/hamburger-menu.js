@@ -12,3 +12,7 @@ hamburgerButton.addEventListener("click", function () {
     promo.classList.toggle("promo-hamburger--active")
     body.classList.toggle("body-noscroll")
 })
+
+window.addEventListener("scroll", function () {
+    body.classList.remove("body-noscroll")
+})
