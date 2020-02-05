@@ -73,11 +73,15 @@
   padding: 30% 10% 20% 10%;
   transition: 0.4s;
   @include phones {
-    padding: 0 0 0 20%;
+    padding: 0 20% 0 20%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: left;
+  }
+  @include m-phones {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -91,6 +95,10 @@
 .hamburger-nav {
   display: flex;
   text-decoration: none;
+  @include m-phones {
+    justify-content: left;
+    margin-bottom: 30px;
+  }
 }
 
 .hamburger-nav__list {
@@ -112,4 +120,7 @@
   font-size: 18px;
   font-weight: 800;
   line-height: 1.8;
+  @include m-phones {
+    font-size: 25px;
+  }
 }
