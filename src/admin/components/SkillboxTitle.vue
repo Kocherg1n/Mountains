@@ -18,6 +18,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+@import url("../../styles/mixins.pcss");
 .wrap {
   display: flex;
   justify-content: space-between;
@@ -30,6 +31,7 @@ export default {
   font-size: 18px;
   font-weight: 600;
   padding-bottom: 10px;
+  outline: none;
 }
 
 .controls {

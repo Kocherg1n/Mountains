@@ -18,6 +18,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+@import url("../../styles/mixins.pcss");
+@import url("../../styles/variables.pcss");
 
 .wrap {
   display: flex;
@@ -34,6 +36,7 @@ export default {
   border-bottom: 1px solid black;
   font-weight: 600;
   padding-bottom: 10px;
+  outline: none;
 }
 
 .skill-digit {
@@ -45,6 +48,10 @@ export default {
   width: 15px;
   margin-left: -28px;
   border-bottom: 1px solid black;
+
+  @include tablets {
+    margin-left: -20px;
+  }
 }
 
 .btn-add {
@@ -52,28 +59,21 @@ export default {
   width: 40px;
   border-radius: 50%;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
-  &:before {
+  &:before,
+  &:after {
     content: "";
     position: absolute;
-    left: 50%;
-    top: 50%;
-    color: white;
+    color: $white;
     display: block;
     height: 3px;
     width: 14px;
-    background-color: white;
-    transform: translate(-50%);
-} &:after {
-  content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    color: white;
-    display: block;
-    height: 3px;
-    width: 14px;
-    background-color: white;
+    background-color: $white;
+  }
+  &:after {
     transform: rotate(90deg);
   }
 }

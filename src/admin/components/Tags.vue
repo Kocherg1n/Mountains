@@ -10,13 +10,15 @@
 export default {
   data() {
     return {
-      tags: ["HTML", "CSS", "Javascript"]
+      tags: ["HTML", "CSS", "JS"]
     };
   }
 };
 </script>
 
 <style lang="postcss" scoped>
+@import url("../../styles/variables.pcss");
+
 .tag__list {
   display: flex;
   flex: flex-start;
@@ -26,11 +28,14 @@ export default {
   margin-right: 15px;
   height: 31px;
   border-radius: 15px;
-  background-color: #f4f4f4;
+  background-color: $light-gray;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 5px 15px;
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .tag__close {

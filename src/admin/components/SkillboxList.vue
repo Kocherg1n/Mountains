@@ -19,6 +19,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+@import url("../../styles/mixins.pcss");
 .skill-list {
   font-weight: 600;
 }
@@ -29,6 +30,8 @@ export default {
 }
 .skill-name {
   flex-grow: 1;
+  /* border: 0;
+  border-bottom: 1px solid black; */
 }
 .skill-digit {
   width: 35px;

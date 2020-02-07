@@ -1,6 +1,7 @@
 /* Навигация desktop  */
 
 .nav {
+
   @include desktop {
     display: none;
   }
@@ -24,7 +25,7 @@
 
 .nav__link:hover {
   color: $purple;
-  transition: 0.3s;
+  transition: $speed;
 }
 
 /* Навигация tablets */
@@ -33,17 +34,13 @@
   color: $purple;
 }
 
-/* footer nav */
-
-/* .nav--footer {
-  @include tablets {
-} */
-
 .nav--footer__list {
   display: flex;
+
   @include desktop {
     justify-content: space-around;
   }
+
   @include tablets {
     justify-content: end;
     flex-wrap: wrap;
@@ -52,9 +49,11 @@
 
 .nav--footer__item {
   margin-right: 8%;
+
   @include desktop {
     margin-right: 7%;
   }
+  
   @include tablets {
     margin-right: 10%;
     margin-bottom: 15px;
@@ -71,5 +70,5 @@
 
 .nav--footer__link:hover {
   color: $purple;
-  transition: 0.3s;
+  transition: $speed;
 }

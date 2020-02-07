@@ -1,10 +1,13 @@
 html {
+
   @include desktop {
     font-size: 15px;
   }
+
   @include tablets {
     font-size: 14px;
   }
+
   @include m-phones {
     font-size: 12px;
   }
@@ -20,7 +23,7 @@ body {
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $text-color;
+  color: $text;
 }
 
 .body-noscroll {
@@ -59,18 +62,22 @@ button {
   line-height: 1.8;
   &__contacts {
     margin-bottom: 64px;
+
     @include tablets {
       text-align: center;
     }
   }
   &__reviews {
-    margin-right: 100px;
+
     @include tablets {
-      margin-bottom: 20px;
+      margin-bottom: 80px;
     }
+
     @include phones {
-      margin-right: 0;
+      margin-right: 0;  
+      text-align: center;
     }
+
     @include m-phones {
       margin-right: 0;
       font-size: 32px;
@@ -85,6 +92,7 @@ button {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.8;
+
     @include tablets {
       text-align: center;
     }
@@ -95,7 +103,9 @@ button {
     display: inline-block;
     margin-right: 60px;
     margin-bottom: 60px;
+    margin-top: 50px;
     font-weight: 600;
+    
 
   }
   &__form {
@@ -155,4 +165,6 @@ img {
   max-width: 100%;
   max-height: 100%;
 }
+
+
 

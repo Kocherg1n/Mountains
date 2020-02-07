@@ -2,7 +2,7 @@
 	nav.nav 
 		ul.nav__list
 			li.nav__item(v-for="item in nav") 
-				router-link.nav__link(:to="item.link") {{item.page}}
+				a.nav__link(:href="item.link") {{item.page}}
 </template>
 
 
@@ -30,6 +30,9 @@ export default {
 </script>
 
 <style lang="pcss" scoped>
+@import url("../../styles/mixins.pcss");
+@import url("../../styles/variables.pcss");
+
 .nav {
   min-height: 77px;
   display: flex;
@@ -54,9 +57,9 @@ export default {
   padding: 25px;
   text-decoration: none;
   &:hover {
-    border-bottom: 3px solid #4b6fd7;
-    color: #4b6fd7;
-    transition: 0.5s;
+    border-bottom: 3px solid $purple;
+    color: $purple;
+    transition: $speed;
   }
 }
 </style>

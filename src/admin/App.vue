@@ -3,17 +3,16 @@
 		app-header
 		.container
 			app-nav
-		.container
-			app-skillbox
-		.work-section
-			work-form
+			h1.title__admin Блок "Обо мне"
+			.skill-section
+				app-skillbox(v-for="one of 3")
+			.work-section
+				work-form
+				works-list
+			.reviews-section
+				reviews-form
+				reviews-list
 
-			
-
-			
-
-
-	
 </template>
 
 <script>
@@ -21,7 +20,12 @@ import appHeader from "./components/Header.vue";
 import appNav from "./components/Nav.vue";
 import appSkillbox from "./components/Skillbox.vue";
 import workForm from "./components/WorkForm.vue";
-import WorkBtn from "./components/WorkBtn.vue";
+import workBtn from "./components/WorkBtn.vue";
+import worksList from "./components/WorksList.vue";
+import reviewsForm from "./components/ReviewsForm.vue";
+import reviewsList from "./components/ReviewsList.vue";
+
+import mixins from "../mixins.pug";
 
 export default {
   components: {
@@ -29,7 +33,10 @@ export default {
     appNav,
     appSkillbox,
     workForm,
-    WorkBtn
+    workBtn,
+    worksList,
+    reviewsForm,
+    reviewsList
   },
   data() {
     return {};
@@ -40,14 +47,33 @@ export default {
 
 
 <style lang="pcss" scoped>
-.skillbox-section {
+@import url("../styles/mixins.pcss");
+@import url("../styles/variables.pcss");
+
+
+.skill-section {
   display: flex;
-  justify-content: space-around;
-  padding: 0 10% 0 10%;
+	flex-wrap: wrap;
+	justify-content: space-AROUND;
+
+	@include desktop {
+  justify-content: space-between;
+	}
+
+	@include tablets {
+		justify-content: center;
+	}
 }
-.title__admin {
-  display: block;
+
+.work-section {
+display: flex;
+flex-direction: column;
 }
+
+.reviews-section {
+	padding-bottom: 50px;
+}
+
 </style>
 
 

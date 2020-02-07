@@ -2,7 +2,7 @@
 	.header
 		.container.header__container
 			.header__info
-				.logo LOGO
+				img.logo(src="../../images/content/user.jpg") 
 				.name Юрий Кочергин
 				.title Панель администрирования
 			.header__btn
@@ -19,10 +19,13 @@ export default {
 </script>
 
 <style lang="pcss" scoped>
+@import url("../../styles/mixins.pcss");
+@import url("../../styles/variables.pcss");
+
 .header {
   min-height: 80px;
-  background-color: black;
-  color: white;
+  background-color: $black;
+  color: $white;
   display: flex;
 }
 
@@ -53,7 +56,7 @@ export default {
 
 .title {
   margin-right: 25px;
-  color: gray;
+  color: $gray;
   font-size: 14px;
   font-weight: 400;
 }
@@ -61,7 +64,7 @@ export default {
 .btn-quit {
   font-size: 16px;
   font-weight: 400;
-  color: gray;
+  color: $gray;
   text-decoration: underline;
 }
 </style>

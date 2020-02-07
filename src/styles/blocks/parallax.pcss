@@ -14,6 +14,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+
   @include tablets {
     display: none;
   }
@@ -29,6 +30,7 @@
   right: 0;
   top: 260px;
   position: absolute;
+
   @media screen and (max-width: 1024px) {
     top: 20%;
   }
@@ -51,9 +53,11 @@
   top: 610px;
   left: -300px;
   position: absolute;
+
   @include desktop {
     top: 550px;
   }
+
   @media screen and (max-width: 1024px) {
     top: 750px;
   }
@@ -64,9 +68,11 @@
   bottom: 0;
   z-index: 100;
   position: absolute;
+
   @include desktop {
     bottom: 100px;
   }
+
   @media screen and (max-width: 1024px) {
     bottom: 35%;
   }
@@ -79,13 +85,10 @@
   object-fit: cover;
   position: absolute;
   object-position: 46%;
+
   @include desktop {
     bottom: -900px;
   }
 }
 
-.parallax__layer {
-  @include tablets {
-    display: none;
-  }
-}
+

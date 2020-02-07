@@ -5,6 +5,7 @@
   align-items: center;
   position: relative;
   clip-path: polygon(0% 0%, 0% 80%, 50% 100%, 100% 80%, 100% 0%);
+
   @include phones {
     padding-bottom: 20px;
   }
@@ -13,9 +14,11 @@
 .about__content {
   display: flex;
   justify-content: center;
+
   @include desktop {
     justify-content: space-around;
   }
+
   @include phones {
     flex-direction: column;
   }
@@ -23,6 +26,7 @@
 
 .about__user-data {
   width: 31%;
+
   @include phones {
     width: 100%;
   }
@@ -33,9 +37,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   @include desktop {
     width: 50%;
   }
+
   @include phones {
     width: 100%;
     padding-bottom: 26%;
@@ -46,6 +52,7 @@
   margin-bottom: 20px;
   font-weight: 600;
   line-height: 1.8;
+  
   @include phones {
     margin-bottom: 5px;
   }
