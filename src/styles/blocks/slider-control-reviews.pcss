@@ -2,6 +2,19 @@
   display: flex;
   width: 130px;
   justify-content: space-between;
+  margin-bottom: 70px;
+
+  @include tablets {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+   @include phones {
+    position: static;
+    top: 0;
+    right: 0;
+  }
 }
 
 .slider__btn--rev {
@@ -14,11 +27,15 @@
   align-items: center;
   cursor: pointer;
   z-index: 100;
+  outline: none;
+
   &:hover {
     border-color: $purple;
+    transition: $speed;
     .slider__btn-next-black,
     .slider__btn-prev-black {
       fill: $purple;
+      transition: $speed;
     }
   }
 }

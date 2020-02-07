@@ -1,16 +1,50 @@
-const parallax = document.querySelector(".parallax")
-const layers = parallax.children;
+import Vue from "vue";
 
-function moveLayersDependOnScroll(wScroll) {
-    Array.from(layers).forEach(layer => {
-        const divider = layer.dataset.speed;
-        const strafe = wScroll * divider / 8
+const skill = {
+  template: "#skill",
+  props: {
+    skillName: String,
+    skillPercent: Number
+  },
+  methods: {
+    drawColoredCircle() {
+      const circle = this.$refs["color-circle"];
+      const dashArray = parseInt(
+        getComputedStyle(circle).getPropertyValue("stroke-dasharray")
+      );
+      const percent = (dashArray / 100) * (100 - this.skillPercent);
 
-        layer.style.transform = `translateY(-${strafe}%)`
-    })
-}
+      circle.style.strokeDashoffset = percent;
+    }
+  },
+  mounted() {
+    this.drawColoredCircle();
+  }
+};
 
-window.addEventListener("scroll", e => {
-    const wScroll = window.pageYOffset;
-    moveLayersDependOnScroll(wScroll)
-})
+const skillsRow = {
+  template: "#skills-row",
+  components: {
+    skill
+  },
+  props: {
+    skill: Object
+  }
+};
+
+new Vue({
+  el: "#skills-component",
+  template: "#skills-list",
+  components: {
+    skillsRow
+  },
+  data() {
+    return {
+      skills: {}
+    };
+  },
+  created() {
+    const data = require("../data/skills.json");
+    this.skills = data;
+  }
+});
