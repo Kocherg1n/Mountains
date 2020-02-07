@@ -1,6 +1,8 @@
 const parallax = document.querySelector(".parallax")
 const layers = parallax.children;
 
+
+
 function parallaxPromo(wScroll) {
     Array.from(layers).forEach(layer => {
         const divider = layer.dataset.speed;
@@ -11,6 +13,9 @@ function parallaxPromo(wScroll) {
 }
 
 window.addEventListener("scroll", e => {
-    const wScroll = window.pageYOffset;
-    parallaxPromo(wScroll)
+    var nowScroll = window.pageYOffset;
+    if (nowScroll < 800) {
+        const wScroll = window.pageYOffset;
+        parallaxPromo(wScroll)
+    }
 })

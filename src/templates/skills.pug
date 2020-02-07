@@ -1,67 +1,27 @@
-.skills#skills
-    h2.title.title__skills Front-End
-    ul.skills__list
-        li.skills__item 
-            .skills__box
-                .skills__box--title HTML5
-                svg(viewBox="0 0 200 200").skills__box--svg-shape
-                    circle(cx="100" cy="100" r="80").skills__box--svg-circle--position-under
-                    circle(cx="100" cy="100" r="80" style=`animation-delay: -50s`).skills__box--svg-circle--position-above
-        li.skills__item
-            .skills__box
-                .skills__box--title CSS
-                svg(viewBox="0 0 200 200").skills__box--svg-shape
-                    circle(cx="100" cy="100" r="80").skills__box--svg-circle--position-under
-                    circle(cx="100" cy="100" r="80" style=`animation-delay: -50s`).skills__box--svg-circle--position-above
-        li.skills__item
-            .skills__box
-                .skills__box--title Javascript
-                svg(viewBox="0 0 200 200").skills__box--svg-shape
-                    circle(cx="100" cy="100" r="80").skills__box--svg-circle--position-under
-                    circle(cx="100" cy="100" r="80" style=`animation-delay: -50s`).skills__box--svg-circle--position-above
-        li.skills__item
-            .skills__box
-                .skills__box--title query и Vue.js
-                svg(viewBox="0 0 200 200").skills__box--svg-shape
-                    circle(cx="100" cy="100" r="80").skills__box--svg-circle--position-under
-                    circle(cx="100" cy="100" r="80" style=`animation-delay: -50s`).skills__box--svg-circle--position-above
-    h2.title.title__skills Workflow
-    ul.skills__list
-        li.skills__item
-            .skills__box
-                .skills__box--title Git
-                svg(viewBox="0 0 200 200").skills__box--svg-shape
-                    circle(cx="100" cy="100" r="80").skills__box--svg-circle--position-under
-                    circle(cx="100" cy="100" r="80" style=`animation-delay: -50s`).skills__box--svg-circle--position-above
-        li.skills__item
-            .skills__box
-                .skills__box--title Terminal
-                svg(viewBox="0 0 200 200").skills__box--svg-shape
-                    circle(cx="100" cy="100" r="80").skills__box--svg-circle--position-under
-                    circle(cx="100" cy="100" r="80" style=`animation-delay: -50s`).skills__box--svg-circle--position-above
-        li.skills__item
-            .skills__box
-                .skills__box--title Gulp
-                svg(viewBox="0 0 200 200").skills__box--svg-shape
-                    circle(cx="100" cy="100" r="80").skills__box--svg-circle--position-under
-                    circle(cx="100" cy="100" r="80" style=`animation-delay: -50s`).skills__box--svg-circle--position-above
-        li.skills__item
-            .skills__box
-                .skills__box--title Webpack
-                svg(viewBox="0 0 200 200").skills__box--svg-shape
-                    circle(cx="100" cy="100" r="80").skills__box--svg-circle--position-under
-                    circle(cx="100" cy="100" r="80" style=`animation-delay: -50s`).skills__box--svg-circle--position-above
+script(type="text/x-template")#skills-list
+  .values__widget-container
+    ul.skills
+      li.skills__item(v-for="skill in skills" :key="skill.skillsGroup")
+        skills-row(
+          :skill="skill"
+        )
 
+script(type="text/x-template")#skills-row
+  .skills-row
+    .skills-row__title {{skill.skillsGroup}}
+    ul.skills-row__list
+      li.skills-row__item(v-for="(skillPercent, skillName) in skill.skills")
+        skill(
+          :skillName="skillName"
+          :skillPercent="skillPercent"
+        )
 
-
-
-svg(style="width:0; height:0; position: absolute;" aria-hidden="true")
-    linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
-        stop(offset="0%" stop-color='#4a00ed')
-        stop(offset="100%" stop-color='#9300e8') 
-    
-    
-    
-    
-    
-    
+script(type="text/x-template")#skill
+  .skill
+    svg(viewBox="0 0 100 100").skill__circle-shape
+      circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+      circle(cx="50" cy="50" r="40" ref="color-circle" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle_above
+      linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+        stop(offset="0%" stop-color="#5500f2")
+        stop(offset="100%" stop-color="#8f00ef")
+    .skill__circle-text {{skillName}}

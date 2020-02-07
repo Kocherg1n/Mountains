@@ -1,8 +1,41 @@
+.slider-container {
+  width: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @include tablets {
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.flickity {
+  width: 800px;
+
+  @include phones {
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.carousel-cell {
+ width: 800px;
+
+ @include phones {
+    width: 100%;
+  }
+}
+
+/////////
+
 .slider-reviews__list {
   display: flex;
+
   @include phones {
     overflow: hidden;
   }
+
   @include m-phones {
     overflow: hidden;
   }
@@ -14,6 +47,7 @@
   &:last-child {
     margin-right: 0;
   }
+
   @include tablets {
     margin-right: 5%;
   }
@@ -21,10 +55,15 @@
 
 .slider-reviews__block {
   max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   @include phones {
     min-width: 340px;
     width: 100vw;
   }
+
   @include m-phones {
     min-width: 260px;
   }
@@ -61,23 +100,25 @@
 }
 
 .slider-reviews__autor-fullname {
-  color: #464d62;
+  color: $purple;
   font-family: "Open Sans";
   font-size: 18px;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 1.8;
 }
 
 .slider-rev__quote-pic {
   width: 75px;
   height: 63px;
-  fill: #464d62;
+  fill: $purple;
   opacity: 0.5;
   margin-right: 20px;
+
   @include tablets {
     width: 36px;
     height: 31px;
   }
+
   @include m-phones {
     display: none;
   }

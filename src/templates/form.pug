@@ -1,13 +1,59 @@
-form.form(action="http://")
+form.form(action="http://" id="mainForm")
     .form__row
-        label.form__label
-            input.form__input(required)
+        .form__box
+            .error(id="error")
+            input.form__input(required type="text"  autocomplete="off" name="name")
+            label.form__label(for="username") 
+                span.form__input-title Введите ваше имя
             +icon('user', 'form-user__icon')
-        label.form__label
-            input.form__input(required)
+        .form__box
+            .error(id="error")
+            input.form__input(required type="email"  autocomplete="off" name="email")
+            label.form__label(for="username") 
+                span.form__input-title Введите ваш email
             +icon('envelope', 'form-user__icon')
     .form__row
-        label.form__label
-            textarea.form__textarea(required)
+        .form__box
+            .error(id="error")
+            textarea.form__textarea.form__input(required type="text" name="text")
+            label(for="usermessage").form__label-textarea
+                span.form__input-title-textarea Сообщение к письму
             +icon('message', 'form-mess__icon')
-    button.form__btn-submit(type="submit") Отправить
+    button.form__btn-submit(type="submit" id="mainSendButton") Отправить
+
+
+
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- form.form(action="http://")
+//-     .form__row
+//-         label.form__label 
+//-             span.form__input-title Введите ваше имя
+//-             input.form__input(required id="username")
+//-             +icon('user', 'form-user__icon')
+//-         label.form__label 
+//-             span.form__input-title Введите ваш email
+//-             input.form__input(required d="usermail")
+//-             +icon('envelope', 'form-user__icon')
+//-     .form__row
+//-         label(for="usermessage").form__label 
+//-             span.form__input-title Сообщение к письму
+//-             textarea.form__textarea(required id="usermessage")
+//-             +icon('message', 'form-mess__icon')
+//-     button.form__btn-submit(type="submit") Отправить
+

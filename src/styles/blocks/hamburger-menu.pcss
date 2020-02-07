@@ -8,6 +8,7 @@
   cursor: pointer;
   z-index: 10;
   position: relative;
+
   @include tablets {
     display: flex;
     margin-left: 60px;
@@ -17,7 +18,7 @@
 .hamburger-menu-icon {
   height: 5px;
   width: 30px;
-  background-color: black;
+  background-color: $black;
   position: relative;
   cursor: pointer;
   border-radius: 2px;
@@ -27,7 +28,7 @@
     height: 5px;
     width: 30px;
     position: absolute;
-    background-color: black;
+    background-color: $black;
     bottom: 8px;
     border-radius: 2px;
     transition: transform 0.2s ease-in, bottom 0.2s linear 0.2s;
@@ -38,7 +39,7 @@
     height: 5px;
     width: 30px;
     position: absolute;
-    background-color: black;
+    background-color: $black;
     top: 8px;
     border-radius: 2px;
     transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
@@ -71,18 +72,25 @@
   right: -50%;
   top: 0;
   padding: 30% 10% 20% 10%;
-  transition: 0.4s;
+  transition: $speed;
+  
   @include phones {
-    padding: 0 0 0 20%;
+    padding: 0 20% 0 20%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: left;
   }
+
+  @include m-phones {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .hamburger--active {
   right: 0;
+
   @include phones {
     width: 100%;
   }
@@ -91,6 +99,11 @@
 .hamburger-nav {
   display: flex;
   text-decoration: none;
+
+  @include m-phones {
+    justify-content: left;
+    margin-bottom: 30px;
+  }
 }
 
 .hamburger-nav__list {
@@ -102,6 +115,7 @@
 
 .hamburger-nav__item {
   margin-bottom: 35px;
+
   @include phones {
     margin-bottom: 15px;
   }
@@ -111,5 +125,9 @@
   text-decoration: none;
   font-size: 18px;
   font-weight: 800;
-  line-height: 48px;
+  line-height: 1.8;
+  
+  @include m-phones {
+    font-size: 25px;
+  }
 }
