@@ -1,23 +1,33 @@
 html {
+
   @include desktop {
     font-size: 15px;
   }
+
   @include tablets {
     font-size: 14px;
+  }
+
+  @include m-phones {
+    font-size: 12px;
   }
 }
 body,
 html {
   height: 100%;
 }
-/*  */
+
 body {
   font-family: Open Sans, Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 1.42;
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $text-color;
+  color: $text;
+}
+
+.body-noscroll {
+  overflow: hidden;
 }
 
 button {
@@ -35,7 +45,6 @@ button {
   margin: 0 auto;
   max-width: 1480px;
   width: 95%;
-  // width: 1490px;
 
   @include phones {
     width: 85%;
@@ -50,23 +59,65 @@ button {
 .title {
   font-size: 36px;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 1.8;
   &__contacts {
     margin-bottom: 64px;
+
+    @include tablets {
+      text-align: center;
+    }
   }
   &__reviews {
-    margin-right: 100px;
+
+    @include tablets {
+      margin-bottom: 80px;
+    }
+
+    @include phones {
+      margin-right: 0;  
+      text-align: center;
+    }
+
+    @include m-phones {
+      margin-right: 0;
+      font-size: 32px;
+      margin-bottom: 50px;
+    }
   }
   &__work {
     margin-bottom: 50px;
+    text-align: center;
   }
-}
+  &__skills {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.8;
 
-.text {
-  opacity: 0.5;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 30px;
+    @include tablets {
+      text-align: center;
+    }
+  }
+
+  &__admin {
+    font-size: 21px;
+    display: inline-block;
+    margin-right: 60px;
+    margin-bottom: 60px;
+    margin-top: 50px;
+    font-weight: 600;
+
+    @include phones {
+    margin-top: 0;
+    margin-bottom: 15px;
+    }
+    
+
+  }
+  &__form {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.8;
+  }
 }
 
 button {
@@ -119,3 +170,7 @@ img {
   max-width: 100%;
   max-height: 100%;
 }
+
+
+
+

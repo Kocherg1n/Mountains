@@ -6,10 +6,24 @@
   display: flex;
 }
 
+.social__link {
+  display: flex;
+}
+
 .social__item--header {
   margin-right: 40px;
   &:last-child {
     margin-right: 0;
+  }
+}
+
+.social__icon--header {
+  width: 25px;
+  height: 25px;
+  fill: black;
+  &:hover {
+    fill: $purple;
+    transition: $speed;
   }
 }
 
@@ -20,24 +34,20 @@
   border-radius: 50%;
   margin-right: 25px;
   position: relative;
-  opacity: 0.1;
+  opacity: 0.2;
+  cursor: pointer;
   &:last-child {
     margin-right: 0;
   }
   &:hover {
-    opacity: 0.8;
-    .social__icon--footer {
-      opacity: 0.8;
-    }
-  }
-}
+    opacity: 1;
+    transition: $speed;
 
-.social__icon--header {
-  width: 25px;
-  height: 25px;
-  fill: black;
-  &:hover {
-    fill: $purple;
+    .social__icon--footer {
+      opacity: 1;
+      transition: $speed;
+
+    }
   }
 }
 
@@ -49,8 +59,25 @@
   width: 20px;
   height: 20px;
   fill: $white;
-  opacity: 0.5;
+
   &:hover {
     opacity: 1;
+    transition: $speed;
+  }
+}
+
+.social--hamburger {
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.social__icon--hamburger {
+  width: 25px;
+  height: 25px;
+  fill: black;
+  margin-right: 40px;
+
+  &:hover {
+    fill: $purple;
   }
 }

@@ -1,24 +1,52 @@
+script(type="text/x-template")#reviews-list
+    div.slider-container
+        .slider__buttons--rev
+            button.slider__btn--prev(id ="prev" @click="previous()" type="button")
+                +icon("arrow", "slider__btn-prev-black")
+            button.slider__btn--next(id ="next" @click="next()" type="button")
+                +icon("arrow", "slider__btn-next-black")
+        ul.slider-reviews__list
+        flickity(class="flickity" ref="flickity" :options="flickityOptions")
+            li.slider-reviews__item.carousel-cell
+                +icon("quote", "slider-rev__quote-pic")
+                .slider-reviews__block
+                    p.slider-reviews__text.text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .slider-reviews__autor
+                        .slider-reviews__autor-photo
+                            +image("content/dima.png", "autor__pic")
+                        .slider-reviews__autor--name
+                            .slider-reviews__autor-fullname Дмитрий Ковальчук
+                            .slider-reviews__autor-position.text Основатель Loftschool                    
+            li.slider-reviews__item.carousel-cell
+                +icon("quote", "slider-rev__quote-pic")
+                .slider-reviews__block
+                    p.slider-reviews__text.text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                    .slider-reviews__autor
+                        .slider-reviews__autor-photo
+                            +image("content/vladimir.png", "autor__pic")
+                        .slider-reviews__autor--name
+                            .slider-reviews__autor-fullname Владимир Сабанцев
+                            .slider-reviews__autor-position.text Преподаватель
+            li.slider-reviews__item.carousel-cell
+                +icon("quote", "slider-rev__quote-pic")
+                .slider-reviews__block
+                    p.slider-reviews__text.text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                    .slider-reviews__autor
+                        .slider-reviews__autor-photo
+                            +image("content/vladimir.png", "autor__pic")
+                        .slider-reviews__autor--name
+                            .slider-reviews__autor-fullname Владимир Сабанцев
+                            .slider-reviews__autor-position.text Преподаватель
+            li.slider-reviews__item.carousel-cell
+                +icon("quote", "slider-rev__quote-pic")
+                .slider-reviews__block
+                    p.slider-reviews__text.text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .slider-reviews__autor
+                        .slider-reviews__autor-photo
+                            +image("content/dima.png", "autor__pic")
+                        .slider-reviews__autor--name
+                            .slider-reviews__autor-fullname Дмитрий Ковальчук
+                            .slider-reviews__autor-position.text Основатель Loftschool
+    
 
-ul.slider-reviews__list
-    li.slider-reviews__item
-        +icon("quote", "slider-rev__quote-pic")
-        .slider-reviews__block
-            p.slider-reviews__text.text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-            .slider-reviews__autor
-                .slider-reviews__autor-photo
-                    +image("content/dima.png", "autor__pic")
-                .slider-reviews__autor--name
-                    .slider-reviews__autor-fullname Дмитрий Ковальчук
-                    .slider-reviews__autor-position.text Основатель Loftschool
-    li.slider-reviews__item
-        +icon("quote", "slider-rev__quote-pic")
-        .slider-reviews__block
-            p.slider-reviews__text.text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-            .slider-reviews__autor
-                .slider-reviews__autor-photo
-                    +image("content/vladimir.png", "autor__pic")
-                .slider-reviews__autor--name
-                    .slider-reviews__autor-fullname Владимир Сабанцев
-                    .slider-reviews__autor-position.text Преподаватель
-        
 

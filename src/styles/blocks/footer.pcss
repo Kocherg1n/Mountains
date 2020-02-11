@@ -1,71 +1,127 @@
 .footer {
   width: 100%;
-  background-color: black;
+  background-color: $black;
   color: $white;
-  min-height: 410px;
+  min-height: 400px;
   z-index: 100;
   position: relative;
+  display: flex;
+  align-items: center;
+
+  @include tablets {
+    padding-top: 5%;
+  }
 }
 
 .footer__container {
   display: flex;
+
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.footer__social {
-  margin-top: 10px;
-}
-
-.footer__base {
-  width: 34%;
+.footer__info {
+  width: 33%;
   display: flex;
-  margin-top: 100px;
+
+  @include desktop {
+    flex-direction: column;
+    width: 23%;
+  }
+
+  @include phones {
+    width: 100%;
+  }
 }
 
-.footer__year {
-  opacity: 0.1;
+.footer__content {
+  flex-grow: 1;
+  margin-left: 8%;
+
+  @include phones {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+}
+
+.footer__copy {
+  opacity: 0.2;
   font-size: 48px;
-  line-height: 30px;
-  margin-right: 60px;
-  margin-top: 8px;
+  font-weight: 400;
+  margin-right: 5%;
+  margin-bottom: 42px;
+
+  @include phones {
+    margin-bottom: 22px;
+  }
 }
 
-.footer__info-user {
+.footer__user {
+  padding-right: 5%;
+}
+
+.footer__user-site {
+  opacity: 0.2;
+}
+
+.footer__user-name {
+  color: $white;
   font-size: 18px;
   font-weight: 700;
-  line-height: 30px;
   text-transform: uppercase;
-}
+  opacity: 1;
+  margin-bottom: 42px;
 
-.footer__info-base {
-  margin-right: 140px;
-  width: 69%;
-}
-
-.footer__text {
-  opacity: 0.1;
-}
-
-.footer__info-text {
-  text-transform: none;
-  margin-top: 32px;
-  opacity: 0.1;
-}
-
-.footer__bar {
-  width: 68%;
+  @include phones {
+    margin-bottom: 15px;
+  }
 }
 
 .footer__nav {
-  margin-top: 100px;
+  margin-bottom: 70px;
+
+  @include tablets {
+    margin-bottom: 35px;
+  }
 }
 
-.footer__info-desc {
+.footer__desc {
   display: flex;
-  margin-top: 70px;
+
+  @include desktop {
+    justify-content: space-around;
+  }
+
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
-.footer__text-autor {
-  font-style: italic;
-  opacity: 1;
-  margin-top: 20px;
+.footer__box {
+  width: 40%;
+  margin-right: 8%;
+
+  @include desktop {
+    width: 100%;
+  }
+  
+  @include tablets {
+    width: 90%;
+    margin-bottom: 3%;
+  }
+  &:last-child {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.footer__text {
+  margin-bottom: 20px;
+  opacity: 0.2;
+}
+
+.footer__social {
+  margin-bottom: 30px;
 }

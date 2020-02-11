@@ -1,10 +1,13 @@
 header.header
     .container.header__container
-        .promo__logo
+        .header__logo
             include ./logo.pug
-        .promo__menu
+        .header__menu
             include ./nav.pug
-            +nav("nav", ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"], ["promo", "about", "skill", "work", "reviews", "contact"])
-        .promo__social
+            +nav("nav", ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"], ["header", "about", "skill", "work", "reviews", "contact"])
+        .header__social
             include ./social.pug
             +social("header")  
+        .header__hamburger
+            include ./hamburger-menu.pug
+            
