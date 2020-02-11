@@ -1,11 +1,12 @@
 <template lang="pug">
-  div.wrap
-    input.input(
+.wrap
+  div.box
+    input.skill(
         placeholder="Новый навык"
       )
-    .skill-digit 100 
-    .skill-percent %
-    button.btn-add
+    .skill-wrap
+      input.skill-digit(placeholder="100")
+  button(type='button').btn-add
 
 </template>
 
@@ -23,35 +24,50 @@ export default {
 
 .wrap {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-wrap {
+  position: relative;
+  &:after {
+    position: absolute;
+    content: "%";
+    top: 0;
+    right: 0;
+  }
+}
+
+.box {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 40px;
   margin-left: 130px;
   font-weight: 600;
-}
-
-.input {
-  width: 200px;
   border: 0;
   border-bottom: 1px solid black;
+  margin-right: 20px;
+
+  @include m-phones {
+    margin-left: 0;
+  }
+}
+
+.skill {
+  width: 200px;
+  border: 0;
   font-weight: 600;
-  padding-bottom: 10px;
   outline: none;
+  @include m-phones {
+    width: 70%;
+  }
 }
 
 .skill-digit {
   width: 35px;
-  border-bottom: 1px solid black;
-}
-
-.skill-percent {
-  width: 15px;
-  margin-left: -28px;
-  border-bottom: 1px solid black;
-
-  @include tablets {
-    margin-left: -20px;
-  }
+  border: none;
+  margin-right: 10px;
 }
 
 .btn-add {
@@ -63,6 +79,7 @@ export default {
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+  margin-top: 28px;
   &:before,
   &:after {
     content: "";

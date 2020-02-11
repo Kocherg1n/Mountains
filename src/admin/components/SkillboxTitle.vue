@@ -5,8 +5,8 @@
         placeholder="Название новой группы"
       )
     .controls
-      button.accept-btn
-      button.cancel-btn
+      button(type="button").accept-btn
+      button(type="button").cancel-btn
 </template>
 
 <script>

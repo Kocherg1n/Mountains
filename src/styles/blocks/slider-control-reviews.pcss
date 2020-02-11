@@ -17,7 +17,8 @@
   }
 }
 
-.slider__btn--rev {
+.slider__btn--prev,
+.slider__btn--next {
   border: 1px solid black;
   border-radius: 50%;
   height: 50px;
@@ -53,3 +54,26 @@
   fill: black;
   transform: rotate(180deg);
 }
+
+.slider__btn-next-black {
+  width: 8px;
+  height: 10px;
+  fill: black;
+  transform: rotate(0deg);
+}
+
+////disable
+
+.disabled {
+  border-color: $light-gray;
+  pointer-events: none;
+}
+
+.disabled-svg {
+  fill: $light-gray;
+}
+
+.disabled-svg-prev {
+  fill: $light-gray;
+}
+

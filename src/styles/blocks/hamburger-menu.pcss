@@ -23,7 +23,7 @@
   cursor: pointer;
   border-radius: 2px;
 
-  &::before {
+  &:before {
     content: "";
     height: 5px;
     width: 30px;
@@ -34,7 +34,7 @@
     transition: transform 0.2s ease-in, bottom 0.2s linear 0.2s;
   }
 
-  &::after {
+  &:after {
     content: "";
     height: 5px;
     width: 30px;
@@ -50,13 +50,13 @@
   background-color: transparent;
 }
 
-.hamburger-menu-icon.hamburger-menu-icon--active::before {
+.hamburger-menu-icon.hamburger-menu-icon--active:before {
   transform: rotate(45deg);
   transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
   bottom: 0;
 }
 
-.hamburger-menu-icon.hamburger-menu-icon--active::after {
+.hamburger-menu-icon.hamburger-menu-icon--active:after {
   transform: rotate(-45deg);
   transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
   top: 0;

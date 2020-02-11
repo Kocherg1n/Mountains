@@ -1,45 +1,60 @@
-import Vue from "vue";
-
-const thumbs = {
-    template: "#slider-thumbs",
-    props: {
-        works: Array,
-        currentWork: Object
-    }
-};
+import Vue from 'vue';
+import axios from 'axios';
 
 const btns = {
-    template: "#slider-btns"
+    template: '#slider-btn',
+    props: {
+        currentIndex: Number,
+        worksLength: Number
+    }
 };
-
-const display = {
-    template: "#slider-display",
-    components: {
-        btns,
-        thumbs
-    },
+const previews = {
+    template: '#slider-previews',
     props: {
         works: Array,
         currentWork: Object,
         currentIndex: Number
     },
     computed: {
-        reversedWorks() {
-            const works = [...this.works];
-            return works.reverse();
+        translate() {
+            const step = 100 / this.works.length;
+            if (this.currentIndex >= this.works.length - 1)
+                return;
+            else if (this.currentIndex < 2)
+                return 0;
+            else if (this.currentIndex >= 2)
+                return step * (this.currentIndex - 1);
         }
     }
 };
 
-const tags = {
-    template: "#slider-tags",
+const display = {
+    template: '#slider-display',
+    components: {
+        previews,
+        btns
+    },
+    methods: {
+        handleSlide(direction) {
+            this.$emit('slide', direction);
+        }
+    },
     props: {
-        tagsArray: Array
+        works: Array,
+        currentWork: Object,
+        currentIndex: Number
     }
 };
 
-const info = {
-    template: "#slider-info",
+const tags = {
+    template: '#slider-tags',
+    props: {
+        tags: Array
+    }
+};
+
+const description = {
+    template: '#slider-desc',
     components: {
         tags
     },
@@ -48,61 +63,74 @@ const info = {
     },
     computed: {
         tagsArray() {
-            return this.currentWork.skills.split(',');
+            return this.currentWork.techs.split(' ');
         }
     }
 };
 
 new Vue({
-    template: "#slider-container",
-    el: "#slider-component",
+    el: '#slider-container',
+    template: '#slider-template',
     components: {
         display,
-        info
+        description
     },
+
     data() {
         return {
             works: [],
             currentIndex: 0
         };
     },
+
     computed: {
         currentWork() {
             return this.works[this.currentIndex];
         }
     },
+
     watch: {
         currentIndex(value) {
-            this.makeInfiniteLoopForCurIndex(value);
+            this.updateCurrentIndex(value);
         }
     },
-    methods: {
-        makeInfiniteLoopForCurIndex(value) {
-            const worksAmount = this.works.length - 1;
-            if (value > worksAmount) this.currentIndex = 0;
-            if (value < 0) this.currentIndex = worksAmount;
-        },
-        makeArrWithRequiredImages(data) {
-            return data.map(item => {
-                const requiredPic = require(`../images/content/${item.photo}`);
-                item.photo = requiredPic;
 
+    methods: {
+        makeArrWithAbsoluteImages(data) {
+            return data.map((item) => {
+                item.photo = `https://webdev-api.loftschool.com/${item.photo}`;
                 return item;
             });
         },
+
+        updateCurrentIndex(value) {
+            if (value >= this.works.length - 1) {
+                this.currentIndex = this.works.length - 1;
+            } else if (value <= 0)
+                this.currentIndex = 0;
+        },
+
         handleSlide(direction) {
             switch (direction) {
-                case "next":
+                case 'next':
                     this.currentIndex++;
                     break;
-                case "prev":
+                case 'prev':
                     this.currentIndex--;
+                    break;
+                default:
+                    this.currentIndex = direction;
                     break;
             }
         }
     },
     created() {
-        const data = require("../data/works.json");
-        this.works = this.makeArrWithRequiredImages(data);
+        axios
+            .get('https://webdev-api.loftschool.com/works/156')
+            .then(response => {
+                const data = response.data.reverse();
+                this.works = this.makeArrWithAbsoluteImages(data);
+            })
+            .catch(error => console.error(error.message));
     }
 });
