@@ -33,6 +33,10 @@ export default {
   padding: 25px;
   display: inline-block;
   margin-bottom: 20px;
+
+  @include m-phones {
+    width: 100%;
+  }
 }
 
 .hr {

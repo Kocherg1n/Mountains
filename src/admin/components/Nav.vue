@@ -56,6 +56,10 @@ export default {
   border-bottom: 3px solid transparent;
   padding: 25px;
   text-decoration: none;
+
+  @include m-phones {
+    padding: 5px;
+  }
   &:hover {
     border-bottom: 3px solid $purple;
     color: $purple;

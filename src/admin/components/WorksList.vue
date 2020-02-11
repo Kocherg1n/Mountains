@@ -2,22 +2,22 @@
 
 <template lang="pug">
     .wrap
-        ul.works__list
-            li.work__list-btn
-                button.btn-add
-                .btn-add__text Add work
-            li.works__item(v-for="item of 2")
-                .picture
-                    tags.tags
+      .works__list
+          button.work__list-btn
+            .btn-add
+            .btn-add__text Add work
+          .works__item(v-for="item of 2")
+            .picture
+                tags.tags
 
-                .desc
-                    .desc__title Сайт школы образования
-                    .desc__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .desc__link-box
-                      a.desc__link(href="http://loftschool.ru") https://loftschool.com
-                .btns
-                    button.btn-change Править
-                    button.btn-delete Удалить
+            .desc
+                .desc__title Сайт школы образования
+                .desc__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                .desc__link-box
+                  a.desc__link(href="http://loftschool.ru") https://loftschool.com
+            .btns
+                button.btn-change Править
+                button.btn-delete Удалить
 </template>
 
 <script>
@@ -126,7 +126,7 @@ export default {
 .btn-add__text {
   margin-top: 10px;
   color: $white;
-  padding: 0 33% 0 33%;
+  padding: 0 23% 0 23%;
   text-align: center;
   font-size: 18px;
 }

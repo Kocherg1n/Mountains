@@ -5,9 +5,11 @@
     hr.hr
     .work-form__content
         .work-form__col
-            .work-form__add-img 
+            .work-form__add-img(id="drop-area") 
                 h4.work-form__text Перетащите или загрузите для загрузки изображения
-                button.btn-download загрузить
+                input(type="file" name="file" id="btn-download").input-btn
+                label(for="btn-download").btn-download Загрузить
+                //- button(type="button" for="#btn-download").btn-download загрузить
         .work-form__col
             .work-form__row
                 label(for="site-name").work-form__label 
@@ -46,16 +48,6 @@ export default {
     formButtons
   }
 };
-
-// formWork - admin
-
-// const workForm = document.querySelector("#workForm");
-// const workSendButton = document.querySelector("#workSendButton");
-// const workError = document.querySelector("#workError");
-
-// workSendButton.addEventListener("click", function() {
-//   console.log("Good job!");
-// });
 </script>
 
 <style lang="postcss" scoped>
@@ -71,6 +63,7 @@ export default {
 .btn-submit {
   width: 181px;
   height: 60px;
+  margin-left: 5px;
   border-radius: 30px;
   background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
   color: $white;
@@ -188,8 +181,20 @@ export default {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 17px;
+  cursor: pointer;
+  padding-top: 9px;
   &:hover {
     background-image: linear-gradient(to right, #3f35cb 0%, #006aed 100%);
   }
+}
+
+.input-btn {
+  height: 0.1;
+  width: 0.1;
+  opacity: 0;
+}
+
+.highlight {
+  border-color: $purple;
 }
 </style>

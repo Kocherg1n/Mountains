@@ -1,59 +1,30 @@
-form.form(action="http://" id="mainForm")
-    .form__row
-        .form__box
-            .error(id="error")
-            input.form__input(required type="text"  autocomplete="off" name="name")
-            label.form__label(for="username") 
-                span.form__input-title Введите ваше имя
-            +icon('user', 'form-user__icon')
-        .form__box
-            .error(id="error")
-            input.form__input(required type="email"  autocomplete="off" name="email")
-            label.form__label(for="username") 
-                span.form__input-title Введите ваш email
-            +icon('envelope', 'form-user__icon')
-    .form__row
-        .form__box
-            .error(id="error")
-            textarea.form__textarea.form__input(required type="text" name="text")
-            label(for="usermessage").form__label-textarea
-                span.form__input-title-textarea Сообщение к письму
-            +icon('message', 'form-mess__icon')
-    button.form__btn-submit(type="submit" id="mainSendButton") Отправить
-
-
-
-
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//- form.form(action="http://")
-//-     .form__row
-//-         label.form__label 
-//-             span.form__input-title Введите ваше имя
-//-             input.form__input(required id="username")
-//-             +icon('user', 'form-user__icon')
-//-         label.form__label 
-//-             span.form__input-title Введите ваш email
-//-             input.form__input(required d="usermail")
-//-             +icon('envelope', 'form-user__icon')
-//-     .form__row
-//-         label(for="usermessage").form__label 
-//-             span.form__input-title Сообщение к письму
-//-             textarea.form__textarea(required id="usermessage")
-//-             +icon('message', 'form-mess__icon')
-//-     button.form__btn-submit(type="submit") Отправить
+#form.form
+    .container
+        h2.form__title.title Связаться со мной
+        form.form__block.j-form(action='https://webdev-api.loftschool.com/sendmail' method='POST')
+            .form__wrap.form__wrap--name
+                label.form__label.form__label--name(for='name')
+                    span.form__label-text.js-label-text Введите имя
+                    +icon('user', 'form__icon form__icon--name')
+                input#name.form__input.js-input(type='text' name='name')
+                .form__error Jib,rf
+            .form__wrap.form__wrap--email
+                label.form__label.form__label--email(for='email')
+                    span.form__label-text.js-label-text Введите email
+                    +icon('message', 'form__icon form__icon--email')
+                input#email.form__input.js-input(type='email' name='email')
+                .form__error
+            .form__wrap.form__wrap--phone
+                label.form__label.form__label--phone(for='phone')
+                    span.form__label-text.js-label-text Введите номер телефона
+                    +icon('user', 'form__icon form__icon--name')
+                input#phone.form__input.js-input(type='tel' name='phone')
+                .form__error
+            .form__wrap.form__wrap--text
+                label.form__label.form__label--text(for='message')
+                    span.form__label-text.js-label-text Сообщение к письму
+                    +icon('message', 'form__icon form__icon--text')
+                textarea#message.form__input.form__input--text.js-input(name='message' rows='1')
+                .form__error
+            button.form__btn.js-submit(type='submit') Отправить
 

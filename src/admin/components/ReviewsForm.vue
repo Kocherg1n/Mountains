@@ -20,7 +20,9 @@
                     .reviews-form-label__title Отзыв
                     textarea.reviews-form__textarea(require id="text-row")
             .reviews-form__row.buttons
-                form-buttons
+              .reviews-form__btns
+                button.btn-cancel(type="reset" ) Отменить
+                button.btn-submit(id="workSendButton" type="submit") Сохранить    
 </template>
 
 <script>
@@ -148,7 +150,10 @@ export default {
 .buttons {
   display: flex;
   justify-content: flex-end;
+  margin-top: 40px;
 }
+
+
 
 .add-photo {
   color: $purple;
@@ -160,5 +165,29 @@ export default {
   border-bottom: 1px solid $purple;
   transition: $speed;
   }
+}
+
+.btn-submit {
+  width: 181px;
+  height: 60px;
+  margin-left: 5px;
+  border-radius: 30px;
+  background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  &:hover {
+    background-image: linear-gradient(to right, #3f35cb 0%, #006aed 100%);
+  }
+}
+
+.btn-cancel {
+  width: 181px;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  color: $purple;
 }
 </style>

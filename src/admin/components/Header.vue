@@ -46,12 +46,20 @@ export default {
   height: 45px;
   border-radius: 50%;
   margin-right: 20px;
+
+  @include m-phones {
+    margin-right: 5px;
+  }
 }
 
 .name {
   margin-right: 25px;
   font-size: 18px;
   font-weight: 400;
+
+  @include m-phones {
+    margin-right: 5px;
+  }
 }
 
 .title {

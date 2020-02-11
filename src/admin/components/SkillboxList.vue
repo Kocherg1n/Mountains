@@ -1,11 +1,11 @@
 <template lang="pug">
 ul.skill-list
   li.skill-item(v-for="item in 4")
-    .skill-name javascript
-    .skill-digit 100 
+    input.skill-name(placeholder="javascript" type="text") 
+    input.skill-digit(placeholder="100" type="text")  
     .skill-percent %
-    button.btn-change 
-    button.btn-delete  
+    button(type="button").btn-change 
+    button(type="button").btn-delete  
 
   
 </template>
@@ -30,11 +30,11 @@ export default {
 }
 .skill-name {
   flex-grow: 1;
-  /* border: 0;
-  border-bottom: 1px solid black; */
+  border: none;
 }
 .skill-digit {
   width: 35px;
+  border: none;
 }
 .skill-percent {
   margin-right: 50px;

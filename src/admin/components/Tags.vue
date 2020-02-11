@@ -1,7 +1,7 @@
 
 <template lang="pug">
   div.tag__list
-      .tag__item(v-for="i in tags") 
+      button(type="button").tag__item(v-for="i in tags") 
           .tag__title {{i}}
           .tag__close
 </template>
@@ -25,6 +25,7 @@ export default {
 }
 
 .tag__item {
+  outline: none;
   margin-right: 15px;
   height: 31px;
   border-radius: 15px;
@@ -43,7 +44,6 @@ export default {
   width: 10px;
   height: 10px;
   margin-left: 10px;
-  cursor: pointer;
 }
 </style>
 

@@ -2,22 +2,22 @@
 
 <template lang="pug">
     .wrap
-        ul.reviews__list
-            li.reviews__list-btn
-                button.btn-add
-                .btn-add__text Add reviews
-            li.reviews__item(v-for="item of 2")
-                .autor
-                  .autor__pic
-                    img.logo(src="../../images/content/user.jpg")
-                  .autor__text
-                    .autor__name Владимир Сабанцев 
-                    .autor__job Преподаватель 
-                .desc
-                    .desc__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                .btns
-                  button.btn-change Править
-                  button.btn-delete Удалить              
+      .reviews__list
+        button(type="button").reviews__list-btn
+          .btn-add
+          .btn-add__text Добавить отзыв
+        .reviews__item(v-for="item of 2")
+          .autor
+            .autor__pic
+              img.logo(src="../../images/content/user.jpg")
+            .autor__text
+              .autor__name Владимир Сабанцев 
+              .autor__job Преподаватель 
+          .desc
+              .desc__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+          .btns
+            button(type="button").btn-change Править
+            button(type="button").btn-delete Удалить              
 </template>
 
 <script>
