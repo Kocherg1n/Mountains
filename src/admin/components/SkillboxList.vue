@@ -2,8 +2,8 @@
 ul.skill-list
   li.skill-item(v-for="item in 4")
     input.skill-name(placeholder="javascript" type="text") 
-    input.skill-digit(placeholder="100" type="text")  
-    .skill-percent %
+    .skill-wrapp
+      input.skill-digit(placeholder="100" type="text")  
     button(type="button").btn-change 
     button(type="button").btn-delete  
 
@@ -31,14 +31,20 @@ export default {
 .skill-name {
   flex-grow: 1;
   border: none;
+  max-width: 360px;
 }
 .skill-digit {
   width: 35px;
   border: none;
 }
-.skill-percent {
-  margin-right: 50px;
-  width: 30px;
+.skill-wrapp {
+  position: relative;
+  margin-right: 30px;
+
+  &:after {
+    content: "%";
+    position: absolute;
+  }
 }
 button.btn-change {
   background: svg-load("pencil.svg", fill=#414c63, width=100%, height=100%);

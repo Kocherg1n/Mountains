@@ -21,13 +21,12 @@
                     textarea.reviews-form__textarea(require id="text-row")
             .reviews-form__row.buttons
               .reviews-form__btns
-                button.btn-cancel(type="reset" ) Отменить
-                button.btn-submit(id="workSendButton" type="submit") Сохранить    
+                  button.btn-cancel(type="reset" ) Отменить
+                  button.btn-submit(id="workSendButton" type="submit") Сохранить    
 </template>
 
 <script>
 import formButtons from "./FormButtons.vue";
-
 
 export default {
   components: {
@@ -65,6 +64,7 @@ export default {
 .reviews-form__label {
   width: 100%;
   margin-right: 30px;
+  margin-top: 10px;
   &:last-child {
     margin-right: 0;
   }
@@ -133,7 +133,6 @@ export default {
   resize: none;
   margin-top: 10px;
   outline: none;
-
 }
 
 .reviews-form__row {
@@ -141,19 +140,11 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  
+
   @include phones {
     flex-direction: column;
   }
 }
-
-.buttons {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 40px;
-}
-
-
 
 .add-photo {
   color: $purple;
@@ -162,11 +153,16 @@ export default {
   margin-top: 20px;
   border-bottom: 1px solid transparent;
   &:hover {
-  border-bottom: 1px solid $purple;
-  transition: $speed;
+    border-bottom: 1px solid $purple;
+    transition: $speed;
   }
 }
 
+.reviews-form__btns {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
 .btn-submit {
   width: 181px;
   height: 60px;
