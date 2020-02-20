@@ -31,7 +31,6 @@ export default {
 
 <style lang="pcss" scoped>
 @import url("../../styles/mixins.pcss");
-@import url("../../styles/variables.pcss");
 
 .nav {
   min-height: 77px;

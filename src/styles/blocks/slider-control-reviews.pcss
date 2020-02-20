@@ -1,4 +1,4 @@
-.slider__buttons--rev {
+  .slider__buttons--rev {
   display: flex;
   width: 130px;
   justify-content: space-between;
@@ -27,8 +27,8 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  z-index: 100;
   outline: none;
+  background-color: transparent;
 
   &:hover {
     border-color: $purple;
@@ -65,15 +65,11 @@
 ////disable
 
 .disabled {
-  border-color: $light-gray;
   pointer-events: none;
+  opacity: 0.3;
 }
 
-.disabled-svg {
-  fill: $light-gray;
-}
 
-.disabled-svg-prev {
-  fill: $light-gray;
-}
+
+
 

@@ -8,8 +8,6 @@
 </script>
 
 <style lang="postcss" scoped>
-@import url("../../styles/variables.pcss");
-
 .wrap {
   margin-top: 40px;
   display: flex;

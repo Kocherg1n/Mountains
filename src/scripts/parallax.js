@@ -13,7 +13,7 @@ function parallaxPromo(wScroll) {
 }
 
 window.addEventListener("scroll", e => {
-    var nowScroll = window.pageYOffset;
+    let nowScroll = window.pageYOffset;
     if (nowScroll < 800) {
         const wScroll = window.pageYOffset;
         parallaxPromo(wScroll)

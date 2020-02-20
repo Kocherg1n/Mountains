@@ -28,7 +28,6 @@ export default {
 
 <style lang="postcss" scoped>
 @import url("../../styles/mixins.pcss");
-@import url("../../styles/variables.pcss");
 
 .wrap {
   margin-top: 70px;

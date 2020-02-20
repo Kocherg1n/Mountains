@@ -9,8 +9,6 @@
 </script>
 
 <style lang="postcss" scoped>
-@import url("../../styles/variables.pcss");
-
 .wrap {
   width: 340px;
   height: 550px;

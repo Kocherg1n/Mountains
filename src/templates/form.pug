@@ -1,7 +1,7 @@
 #form.form
-    .container
-        h2.form__title.title Связаться со мной
-        form.form__block.j-form(action='https://webdev-api.loftschool.com/sendmail' method='POST')
+    h2.form__title.title Связаться со мной
+    form.form__block.j-form(action='https://webdev-api.loftschool.com/sendmail' method='POST')
+        .form__row
             .form__wrap.form__wrap--name
                 label.form__label.form__label--name(for='name')
                     span.form__label-text.js-label-text Введите имя
@@ -14,17 +14,17 @@
                     +icon('message', 'form__icon form__icon--email')
                 input#email.form__input.js-input(type='email' name='email')
                 .form__error
-            .form__wrap.form__wrap--phone
-                label.form__label.form__label--phone(for='phone')
-                    span.form__label-text.js-label-text Введите номер телефона
-                    +icon('user', 'form__icon form__icon--name')
-                input#phone.form__input.js-input(type='tel' name='phone')
-                .form__error
-            .form__wrap.form__wrap--text
-                label.form__label.form__label--text(for='message')
-                    span.form__label-text.js-label-text Сообщение к письму
-                    +icon('message', 'form__icon form__icon--text')
-                textarea#message.form__input.form__input--text.js-input(name='message' rows='1')
-                .form__error
-            button.form__btn.js-submit(type='submit') Отправить
+        .form__wrap.form__wrap--phone
+            label.form__label.form__label--phone(for='phone')
+                span.form__label-text.js-label-text Введите номер телефона
+                +icon('user', 'form__icon form__icon--name')
+            input#phone.form__input.js-input(type='tel' name='phone')
+            .form__error
+        .form__wrap.form__wrap--text
+            label.form__label.form__label--text(for='message')
+                span.form__label-text.js-label-text Сообщение к письму
+                +icon('message', 'form__icon form__icon--text')
+            textarea#message.form__input.form__input--text.js-input(name='message' rows='1')
+            .form__error
+        button.form__btn.js-submit(type='submit') Отправить
 

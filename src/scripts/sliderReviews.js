@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Flickity from 'vue-flickity'
 
+let items = document.querySelectorAll('.carousel-cell');
+console.log(items);
+
 new Vue({
     el: "#slider-reviews",
     template: "#reviews-list",
@@ -9,44 +12,36 @@ new Vue({
     },
     data() {
         return {
-            flag: 1,
+            counter: 0,
             flickityOptions: {
                 prevNextButtons: false,
                 pageDots: false,
-                wrapAround: false,
-                freeScroll: true,
-                cellAlign: 'left'
+                freeScroll: false,
+                cellAlign: 'left',
+                draggable: false
             }
         }
     },
     methods: {
         next() {
-            if (this.flag >= 3) {
-                document.querySelector('.slider__btn--next').setAttribute('disabled', 'disabled');
-                document.querySelector('.slider__btn--next').classList.add('disabled');
-                document.querySelector('.slider__btn-next-black').classList.add('disabled-svg')
-            } else {
-                document.querySelector('.slider__btn--prev').removeAttribute('disabled', 'disabled');
-                document.querySelector('.slider__btn--prev').classList.remove('disabled');
-                document.querySelector('.slider__btn-prev-black').classList.remove('disabled-svg')
-                this.$refs.flickity.next();
-                this.flag++;
-                console.log("click");
+            this.counter++;
+            if (this.counter > 0) {
+                document.querySelector('.slider__btn--prev').classList.remove('disabled')
             }
+            if (this.counter === 3) {
+                document.querySelector('.slider__btn--next').classList.add('disabled')
+            }
+            this.$refs.flickity.next();
         },
         previous() {
-            if (this.flag <= 1) {
-                document.querySelector('.slider__btn--prev').setAttribute('disabled', 'disabled');
-                document.querySelector('.slider__btn--prev').classList.add('disabled');
-                document.querySelector('.slider__btn-prev-black').classList.add('disabled-svg')
-            } else {
-                document.querySelector('.slider__btn--next').removeAttribute('disabled', 'disabled');
-                document.querySelector('.slider__btn--next').classList.remove('disabled');
-                document.querySelector('.slider__btn-next-black').classList.remove('disabled-svg')
-                this.$refs.flickity.previous();
-                this.flag--;
-                console.log("click");
+            this.counter--;
+            if (this.counter === 0) {
+                document.querySelector('.slider__btn--prev').classList.add('disabled')
             }
+            if (this.counter < 3) {
+                document.querySelector('.slider__btn--next').classList.remove('disabled')
+            }
+            this.$refs.flickity.previous();
         }
     }
 });

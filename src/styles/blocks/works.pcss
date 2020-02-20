@@ -13,7 +13,6 @@
             position: relative;
             flex-direction: column;
             justify-content: center;
-            /* align-items: center; */
         }
 
         @include desktop {
@@ -175,7 +174,7 @@
         bottom: 0;
         width: 50px;
         height: 50px;
-        background-color: $purple;
+        background-color: black;
         transition: background-color $speed;
 
         &:not([disabled]):hover {
@@ -184,9 +183,10 @@
 
         &:disabled {
             cursor: default;
+            opacity: 0.3;
 
             .works__btn-icon {
-                opacity: .3;
+                opacity: 1;
             }
         }
 
@@ -341,10 +341,11 @@
     }
 
     &__link-text {
+        &:hover {
+        border-bottom: 1px solid $links-color;
+        }
         border-bottom: 1px solid transparent;
         transition: border-bottom $speed;
     }
 }
-
-
 

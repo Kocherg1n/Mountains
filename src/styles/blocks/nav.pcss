@@ -12,7 +12,7 @@
 }
 
 .nav__item {
-  margin-right: 65px;
+  /* margin-right: 65px; */
 
   &:last-child {
     margin-right: 0;
@@ -21,6 +21,9 @@
 
 .nav__link {
   text-decoration: none;
+  padding: 35px;
+  border-bottom: 1px solid transparent;
+  font-weight: 600;
 }
 
 .nav__link:hover {
@@ -71,4 +74,19 @@
 .nav--footer__link:hover {
   color: $purple;
   transition: $speed;
+}
+
+
+
+.nav__link--fixed {
+  &:hover {
+  border-bottom: 2px solid $purple;
+  }
+}
+
+
+
+.test-class {
+  border-bottom: 2px solid $purple;
+  color: $purple;
 }

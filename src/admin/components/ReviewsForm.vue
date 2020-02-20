@@ -36,7 +36,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-@import url("../../styles/variables.pcss");
 @import url("../../styles/mixins.pcss");
 .wrapp {
   display: flex;

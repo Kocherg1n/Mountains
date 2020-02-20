@@ -15,6 +15,14 @@
         padding: 100px 0 135px;
     }
 
+    &__row {
+        display: flex;
+        width: 100%;
+        @include m-phones {
+            flex-direction: column;
+        }
+    }
+
     &__title {
         text-align: left;
         margin-bottom: 40px;
@@ -45,8 +53,12 @@
         flex-basis: 100%;
 
         &--name {
+            margin-right: 30px;
+             @include m-phones {
+                margin-right: 0;
+            }
             @include tablets {
-                flex-basis: 100%;
+                flex-basis: 50%;
             }
         }
 

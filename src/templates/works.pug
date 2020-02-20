@@ -1,81 +1,82 @@
 section#works.works
-    h2.works__title.title Мои работы
-
-    #slider-container
-
-script(type='text/x-template')#slider-template
-    .works__container.container(v-if='works.length > 0')
-        .works__work-number {{currentIndex + 1}}
-        display(
-            :works='works'
-            :currentWork='currentWork'
-            @slide='handleSlide'
-            :currentIndex='currentIndex'
-        )
-        description(
-            :currentWork='currentWork'
-        )
-
-script(type='text/x-template')#slider-display
-    .works__slider(:data-slide='currentIndex + 1')
-        .works__main-work
-            img.works__img(:src='currentWork.photo' alt='Скриншот страницы моего проекта')
-        previews(
-            :works='works'
-            :currentWork='currentWork'
-            :currentIndex='currentIndex'
-            @slide='handleSlide'
-        )
-        btns(
-            :worksLength='works.length'
-            :currentIndex='currentIndex'
-            @slide='handleSlide'
-        )
-
-script(type='text/x-template')#slider-previews
-    .works__previews
-        .works__preview-block(:style='{transform: `translateY(-${translate}%)`}')
-            button.works__preview-btn(
-                v-for='work, index in works'
-                :key='work.id'
-                @click='$emit("slide", index)'
-                :class='{active: work.id === currentWork.id}'
-                type='button' aria-label='Миниатюра скриншота'
-                :disabled='work.id === currentWork.id'
-                tabindex='-1'
+    .container
+        h2.title__works.title Мои работы
+        #slider-container
+    script(type='text/x-template')#slider-template
+        .works__container.container(v-if='works.length > 0')
+            .works__work-number {{currentIndex + 1}}
+            display(
+                :works='works'
+                :currentWork='currentWork'
+                @slide='handleSlide'
+                :currentIndex='currentIndex'
             )
-                img.works__img(:src='work.photo' alt='Миниатюра скриншота страницы моего проекта')
+            description(
+                :currentWork='currentWork'
+            )
+
+    script(type='text/x-template')#slider-display
+        .works__slider(:data-slide='currentIndex + 1')
+            .works__main-work
+                img.works__img(:src='currentWork.photo' alt='Скриншот страницы моего проекта')
+            previews(
+                :works='works'
+                :currentWork='currentWork'
+                :currentIndex='currentIndex'
+                @slide='handleSlide'
+            )
+            btns(
+                :worksLength='works.length'
+                :currentIndex='currentIndex'
+                @slide='handleSlide'
+            )
+
+    script(type='text/x-template')#slider-previews
+        .works__previews
+            .works__preview-block(:style='{transform: `translateY(-${translate}%)`}')
+                button.works__preview-btn(
+                    v-for='work, index in works'
+                    :key='work.id'
+                    @click='$emit("slide", index)'
+                    :class='{active: work.id === currentWork.id}'
+                    type='button' aria-label='Миниатюра скриншота'
+                    :disabled='work.id === currentWork.id'
+                    tabindex='-1'
+                )
+                    img.works__img(:src='work.photo' alt='Миниатюра скриншота страницы моего проекта')
 
 
-script(type='text/x-template')#slider-btn
-    .works__controls
-        button.works__btn.works__btn--prev(
-            @click='$emit("slide", "prev")'
-            type='button'
-            aria-label='Предыдущий слайд'
-            :disabled='currentIndex <= 0'
-        )
-            +icon('arrow', 'works__btn-icon')
-        button.works__btn.works__btn--next(
-            @click='$emit("slide", "next")'
-            type='button'
-            aria-label='Следующий слайд'
-            :disabled='currentIndex >= (worksLength - 1)'
-        )
-            +icon('arrow', 'works__btn-icon works__btn-icon--next'
-        )
+    script(type='text/x-template')#slider-btn
+        .works__controls
+            button.works__btn.works__btn--prev(
+                @click='$emit("slide", "prev")'
+                type='button'
+                aria-label='Предыдущий слайд'
+                :disabled='currentIndex <= 0'
+            )
+                +icon('arrow', 'works__btn-icon')
+            button.works__btn.works__btn--next(
+                @click='$emit("slide", "next")'
+                type='button'
+                aria-label='Следующий слайд'
+                :disabled='currentIndex >= (worksLength - 1)'
+            )
+                +icon('arrow', 'works__btn-icon works__btn-icon--next'
+            )
 
-script(type='text/x-template')#slider-desc
-    .works__wrapper
-        tags(
-            :tags='tagsArray'
-        )
-        h3.works__work-title {{currentWork.title}}
-        .works__description.text
-            p {{currentWork.description}}
-        a.works__link(:href='currentWork.link')
-            span.works__link-text Посмотреть сайт
+    script(type='text/x-template')#slider-desc
+        .works__wrapper
+            tags(
+                :tags='tagsArray'
+            )
+            h3.works__work-title {{currentWork.title}}
+            .works__description.text
+                p {{currentWork.description}}
+            a.works__link(:href='currentWork.link')
+                span.works__link-text Посмотреть сайт
 
-script(type='text/x-template')#slider-tags
-    .works__tags
-        span.works__tag(v-for='tag in tags') {{tag}}
+    script(type='text/x-template')#slider-tags
+        .works__tags
+            span.works__tag(v-for='tag in tags') {{tag}}
+
+            

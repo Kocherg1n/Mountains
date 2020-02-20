@@ -20,7 +20,6 @@ export default {
 
 <style lang="pcss" scoped>
 @import url("../../styles/mixins.pcss");
-@import url("../../styles/variables.pcss");
 
 .header {
   min-height: 80px;

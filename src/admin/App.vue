@@ -48,32 +48,30 @@ export default {
 
 <style lang="pcss" scoped>
 @import url("../styles/mixins.pcss");
-@import url("../styles/variables.pcss");
-
+@import url("../styles/main2.pcss");
 
 .skill-section {
   display: flex;
-	flex-wrap: wrap;
-	justify-content: space-AROUND;
+  flex-wrap: wrap;
+  justify-content: space-AROUND;
 
-	@include desktop {
-  justify-content: space-between;
-	}
+  @include desktop {
+    justify-content: space-between;
+  }
 
-	@include tablets {
-		justify-content: center;
-	}
+  @include tablets {
+    justify-content: center;
+  }
 }
 
 .work-section {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .reviews-section {
-	padding-bottom: 50px;
+  padding-bottom: 50px;
 }
-
 </style>
 
 

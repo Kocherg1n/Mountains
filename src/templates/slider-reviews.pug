@@ -1,7 +1,7 @@
 script(type="text/x-template")#reviews-list
     div.slider-container
         .slider__buttons--rev
-            button.slider__btn--prev(id ="prev" @click="previous()" type="button")
+            button.slider__btn--prev(id ="prev" @click="previous()" type="button").disabled
                 +icon("arrow", "slider__btn-prev-black")
             button.slider__btn--next(id ="next" @click="next()" type="button")
                 +icon("arrow", "slider__btn-next-black")

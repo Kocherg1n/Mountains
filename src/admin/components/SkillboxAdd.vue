@@ -20,7 +20,6 @@ export default {
 
 <style lang="postcss" scoped>
 @import url("../../styles/mixins.pcss");
-@import url("../../styles/variables.pcss");
 
 .wrap {
   display: flex;
