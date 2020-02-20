@@ -1,9 +1,18 @@
+/* Навигация desktop  */
+
+.nav {
+
+  @include desktop {
+    display: none;
+  }
+}
+
 .nav__list {
   display: flex;
 }
 
 .nav__item {
-  margin-right: 65px;
+  /* margin-right: 65px; */
 
   &:last-child {
     margin-right: 0;
@@ -12,9 +21,72 @@
 
 .nav__link {
   text-decoration: none;
+  padding: 35px;
+  border-bottom: 1px solid transparent;
+  font-weight: 600;
 }
 
 .nav__link:hover {
   color: $purple;
+  transition: $speed;
 }
-/*  */
+
+/* Навигация tablets */
+
+.hamburger-nav__item:hover {
+  color: $purple;
+}
+
+.nav--footer__list {
+  display: flex;
+
+  @include desktop {
+    justify-content: space-around;
+  }
+
+  @include tablets {
+    justify-content: end;
+    flex-wrap: wrap;
+  }
+}
+
+.nav--footer__item {
+  margin-right: 8%;
+
+  @include desktop {
+    margin-right: 7%;
+  }
+  
+  @include tablets {
+    margin-right: 10%;
+    margin-bottom: 15px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.nav--footer__link {
+  text-decoration: none;
+}
+
+.nav--footer__link:hover {
+  color: $purple;
+  transition: $speed;
+}
+
+
+
+.nav__link--fixed {
+  &:hover {
+  border-bottom: 2px solid $purple;
+  }
+}
+
+
+
+.test-class {
+  border-bottom: 2px solid $purple;
+  color: $purple;
+}

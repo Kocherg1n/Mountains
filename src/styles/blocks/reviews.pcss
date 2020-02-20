@@ -1,10 +1,45 @@
+.reviews__container {
+
+  @include tablets {
+    position: relative;
+
+  }
+}
+
 .reviews {
   padding: 150px 0;
   min-height: 640px;
   position: relative;
+
+  @include m-phones {
+    padding-bottom: 20px;
+  }
 }
 
 .reviews__block {
   display: flex;
-  margin-bottom: 96px;
+
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @include m-phones {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 90px;
+  }
 }
+
+.triangle {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  clip-path: polygon(0% 0%, 0% 50%, 50% 100%, 100% 50%, 100% 0%);
+  background: white;
+}
+
