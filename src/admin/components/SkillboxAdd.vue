@@ -58,6 +58,7 @@ export default {
   border: 0;
   font-weight: 600;
   outline: none;
+  height: 100%;
   @include m-phones {
     width: 70%;
   }

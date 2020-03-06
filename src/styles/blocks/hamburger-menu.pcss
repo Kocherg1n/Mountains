@@ -9,7 +9,7 @@
   z-index: 10;
   position: relative;
 
-  @include tablets {
+  @include desktop {
     display: flex;
     margin-left: 60px;
   }
@@ -73,7 +73,7 @@
   top: 0;
   padding: 30% 10% 20% 10%;
   transition: $speed;
-  
+
   @include phones {
     padding: 0 20% 0 20%;
     display: flex;
@@ -86,15 +86,16 @@
     display: flex;
     justify-content: center;
   }
-}
 
-.hamburger--active {
-  right: 0;
+  &--active {
+    right: 0;
 
-  @include phones {
-    width: 100%;
+    @include phones {
+      width: 100%;
+    }
   }
 }
+
 
 .hamburger-nav {
   display: flex;
@@ -104,30 +105,35 @@
     justify-content: left;
     margin-bottom: 30px;
   }
-}
 
-.hamburger-nav__list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
 
-.hamburger-nav__item {
-  margin-bottom: 35px;
+  &__item {
+    margin-bottom: 35px;
 
-  @include phones {
-    margin-bottom: 15px;
+    &:hover {
+      color: $purple;
+    }
+
+    @include phones {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.8;
+
+    @include m-phones {
+      font-size: 25px;
+    }
   }
 }
 
-.hamburger-nav__link {
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 1.8;
-  
-  @include m-phones {
-    font-size: 25px;
-  }
-}

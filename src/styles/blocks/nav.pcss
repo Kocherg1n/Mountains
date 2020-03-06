@@ -1,92 +1,86 @@
-/* Навигация desktop  */
-
 .nav {
 
-  @include desktop {
-    display: none;
+  &__list {
+    display: flex;
   }
-}
 
-.nav__list {
-  display: flex;
-}
+  &__item {
+    
 
-.nav__item {
-  /* margin-right: 65px; */
+    @include desktop {
+      display: none;
+    }
 
-  &:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
-}
 
-.nav__link {
-  text-decoration: none;
-  padding: 35px;
-  border-bottom: 1px solid transparent;
-  font-weight: 600;
-}
+  &__link {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    font-weight: 600;
+    padding: 35px;
 
-.nav__link:hover {
-  color: $purple;
-  transition: $speed;
+    &:hover {
+      color: $purple;
+      transition: $speed;
+    }
+  }
 }
 
 /* Навигация tablets */
 
-.hamburger-nav__item:hover {
-  color: $purple;
-}
+.nav-footer {
+  &__list {
+    display: flex;
 
-.nav--footer__list {
-  display: flex;
+    @include desktop {
+      justify-content: space-around;
+    }
 
-  @include desktop {
-    justify-content: space-around;
+    @include tablets {
+      justify-content: end;
+      flex-wrap: wrap;
+    }
   }
 
-  @include tablets {
-    justify-content: end;
-    flex-wrap: wrap;
+  &__item {
+    margin-right: 8%;
+
+    @include desktop {
+      margin-right: 7%;
+    }
+
+    @include tablets {
+      margin-right: 10%;
+      margin-bottom: 15px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
-}
 
-.nav--footer__item {
-  margin-right: 8%;
+  &__link {
+    text-decoration: none;
 
-  @include desktop {
-    margin-right: 7%;
-  }
-  
-  @include tablets {
-    margin-right: 10%;
-    margin-bottom: 15px;
-  }
+    &:hover {
+      color: $purple;
+      transition: $speed;
+    }
 
-  &:last-child {
-    margin-right: 0;
-  }
-}
-
-.nav--footer__link {
-  text-decoration: none;
-}
-
-.nav--footer__link:hover {
-  color: $purple;
-  transition: $speed;
-}
-
-
-
-.nav__link--fixed {
-  &:hover {
-  border-bottom: 2px solid $purple;
+    &--fixed {
+      &:hover {
+        border-bottom: 2px solid $purple;
+      }
+    }
   }
 }
 
+// active menu nav item
 
-
-.test-class {
+.active {
   border-bottom: 2px solid $purple;
   color: $purple;
 }

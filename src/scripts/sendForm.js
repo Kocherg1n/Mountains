@@ -1,6 +1,9 @@
 import Inputmask from 'inputmask';
 import formValidate from './validate.js';
 
+sendForm({
+    form: document.querySelector('.j-form')
+});
 
 export default function sendForm(options) {
     const phoneMask = '+7 999 99-99-99';
@@ -65,7 +68,7 @@ export default function sendForm(options) {
                 },
                 body: formData
             })
-            // .then(this._checkStatus)
+
             .then(response => {
                 if (response.ok)
                     response.json();

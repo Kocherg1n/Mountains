@@ -1,17 +1,115 @@
+.slider-reviews {
 
-///////
-
-.slider-container {
-  width: 900px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  @include tablets {
-    align-items: center;
-    width: 100%;
+  &__container {
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  
+    @include tablets {
+      align-items: center;
+      width: 100%;
+    }
   }
+
+  &__list {
+    display: flex;
+  
+    @include phones {
+      overflow: hidden;
+    }
+  
+    @include m-phones {
+      overflow: hidden;
+    }
+  }
+
+  &__item {
+    display: flex;
+    margin-right: 10%;
+    &:last-child {
+      margin-right: 0;
+    }
+  
+    @include tablets {
+      margin-right: 5%;
+    }
+  }
+
+  &__block {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    @include phones {
+      min-width: 340px;
+      width: 100vw;
+    }
+  
+    @include m-phones {
+      min-width: 260px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__autor {
+    display: flex;
+  }
+
+  &__autor--name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__autor-photo {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+
+  &__autor-fullname {
+    color: $purple;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.8;
+  }
+
+  &__quote-pic {
+    width: 75px;
+    height: 63px;
+    fill: $purple;
+    opacity: 0.5;
+    margin-right: 20px;
+  
+    @include tablets {
+      width: 36px;
+      height: 31px;
+    }
+  
+    @include m-phones {
+      display: none;
+    }
+  }
+
+  &__autor-pic {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: 0 10px;
+    transform: scale(1.5);
+  }
+
 }
+
+////// flickity slider style
 
 .flickity {
   width: 900px;
@@ -27,103 +125,6 @@
 
  @include phones {
     width: 100%;
-  }
-}
-
-/////////
-
-.slider-reviews__list {
-  display: flex;
-
-  @include phones {
-    overflow: hidden;
-  }
-
-  @include m-phones {
-    overflow: hidden;
-  }
-}
-
-.slider-reviews__item {
-  display: flex;
-  margin-right: 10%;
-  &:last-child {
-    margin-right: 0;
-  }
-
-  @include tablets {
-    margin-right: 5%;
-  }
-}
-
-.slider-reviews__block {
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  @include phones {
-    min-width: 340px;
-    width: 100vw;
-  }
-
-  @include m-phones {
-    min-width: 260px;
-  }
-}
-
-.slider-reviews__text {
-  margin-bottom: 20px;
-}
-
-.slider-reviews__autor {
-  display: flex;
-}
-
-.slider-reviews__autor--name {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.slider-reviews__autor-photo {
-  border-radius: 50%;
-  width: 75px;
-  height: 75px;
-  overflow: hidden;
-  margin-right: 10px;
-}
-
-.autor__pic {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: 0 10px;
-  transform: scale(1.5);
-}
-
-.slider-reviews__autor-fullname {
-  color: $purple;
-  font-family: "Open Sans";
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.8;
-}
-
-.slider-rev__quote-pic {
-  width: 75px;
-  height: 63px;
-  fill: $purple;
-  opacity: 0.5;
-  margin-right: 20px;
-
-  @include tablets {
-    width: 36px;
-    height: 31px;
-  }
-
-  @include m-phones {
-    display: none;
   }
 }
 

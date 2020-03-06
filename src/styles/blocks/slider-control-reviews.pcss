@@ -1,74 +1,69 @@
   .slider__buttons--rev {
-  display: flex;
-  width: 130px;
-  justify-content: space-between;
-  margin-bottom: 70px;
+    display: flex;
+    width: 130px;
+    justify-content: space-between;
+    margin-bottom: 70px;
 
-  @include tablets {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  
-   @include phones {
-    position: static;
-    top: 0;
-    right: 0;
-  }
-}
+    @include tablets {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
 
-.slider__btn--prev,
-.slider__btn--next {
-  border: 1px solid black;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  outline: none;
-  background-color: transparent;
-
-  &:hover {
-    border-color: $purple;
-    transition: $speed;
-    .slider__btn-next-black,
-    .slider__btn-prev-black {
-      fill: $purple;
-      transition: $speed;
+    @include phones {
+      position: static;
+      top: 0;
+      right: 0;
     }
   }
-}
 
-.slider__btn-next-black {
-  width: 8px;
-  height: 10px;
-  fill: black;
-  transform: rotate(0deg);
-}
+  .slider__btn--prev,
+  .slider__btn--next {
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
 
-.slider__btn-prev-black {
-  width: 8px;
-  height: 10px;
-  fill: black;
-  transform: rotate(180deg);
-}
+    &:hover {
+      border-color: $purple;
+      transition: $speed;
 
-.slider__btn-next-black {
-  width: 8px;
-  height: 10px;
-  fill: black;
-  transform: rotate(0deg);
-}
+      .slider__btn-next-black,
+      .slider__btn-prev-black {
+        fill: $purple;
+        transition: $speed;
+      }
+    }
+  }
 
+  .slider__btn-next-black {
+    width: 8px;
+    height: 10px;
+    fill: black;
+    transform: rotate(0deg);
+  }
 
-.disabled {
-  pointer-events: none;
-  opacity: 0.3;
-}
+  .slider__btn-prev-black {
+    width: 8px;
+    height: 10px;
+    fill: black;
+    transform: rotate(180deg);
+  }
 
+  .slider__btn-next-black {
+    width: 8px;
+    height: 10px;
+    fill: black;
+    transform: rotate(0deg);
+  }
 
-
-
-
+  .disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }

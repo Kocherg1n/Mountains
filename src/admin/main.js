@@ -1,4 +1,4 @@
-import "../styles/main2.pcss"; // временный импорт (без блоков основного сайта)
+import "../styles/main.pcss"; // временный импорт (без блоков основного сайта)
 
 import Vue from 'vue';
 import App from './App.vue'

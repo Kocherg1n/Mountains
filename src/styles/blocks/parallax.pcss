@@ -6,89 +6,87 @@
     background-position: 75%;
     background-size: cover;
   }
-}
 
-.parallax__layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  &__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
-  @include tablets {
-    display: none;
+    @include tablets {
+      display: none;
+    }
   }
-}
 
-.parallax__sky {
-  object-fit: none;
-  width: 100%;
-  position: absolute;
-}
-
-.parallax__mountain {
-  right: 0;
-  top: 260px;
-  position: absolute;
-
-  @media screen and (max-width: 1024px) {
-    top: 20%;
+  &__sky {
+    object-fit: none;
+    width: 100%;
+    position: absolute;
   }
-}
 
-.parallax__baloon {
-  top: 218px;
-  left: 50%;
-  margin-left: 12%;
-  position: absolute;
-}
+  &__mountain {
+    right: 0;
+    top: 260px;
+    position: absolute;
 
-.parallax__cloud {
-  top: 550px;
-  left: 0;
-  position: absolute;
-}
+    @media screen and (max-width: 1024px) {
+      top: 20%;
+    }
+  }
 
-.parallax__man {
-  top: 610px;
-  left: -300px;
-  position: absolute;
+  &__baloon {
+    top: 218px;
+    left: 50%;
+    margin-left: 12%;
+    position: absolute;
+  }
 
-  @include desktop {
+  &__cloud {
     top: 550px;
+    left: 0;
+    position: absolute;
   }
 
-  @media screen and (max-width: 1024px) {
-    top: 750px;
+  &__man {
+    top: 610px;
+    left: -300px;
+    position: absolute;
+
+    @include desktop {
+      top: 550px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      top: 750px;
+    }
+  }
+
+  &__mountain1 {
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    position: absolute;
+
+    @include desktop {
+      bottom: 100px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      bottom: 35%;
+    }
+  }
+
+  &__white {
+    bottom: -1200px;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    object-position: 46%;
+
+    @include desktop {
+      bottom: -900px;
+    }
   }
 }
-
-.parallax__mountain1 {
-  right: 0;
-  bottom: 0;
-  z-index: 100;
-  position: absolute;
-
-  @include desktop {
-    bottom: 100px;
-  }
-
-  @media screen and (max-width: 1024px) {
-    bottom: 35%;
-  }
-}
-
-.parallax__white {
-  bottom: -1200px;
-  left: 0;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  object-position: 46%;
-
-  @include desktop {
-    bottom: -900px;
-  }
-}
-
-

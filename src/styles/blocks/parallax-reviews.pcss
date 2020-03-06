@@ -4,42 +4,46 @@
 
   @include tablets {
     background: url(/src/images/bg/Budda.jpg) center center;
+
     .parallax-reviews__layer {
       display: none;
     }
   }
-}
 
-.parallax-reviews__layer {
-  position: absolute;
-  top: 0;
-  width: 120%;
-  height: 100%;
-  left: -20%;
-}
-
-.parallax__image-reviews-sky {
-  object-fit: cover;
-  width: 120%;
-  height: 100%;
-  position: absolute;
-}
-
-.parallax__image-reviews-mountain {
-  bottom: 0;
-  position: absolute;
-  width: 130%;
-}
-
-.parallax__image-reviews-buddha {
-  bottom: -170px;
-  left: 60%;
-  position: absolute;
-}
-
-.parallax__image-reviews-clouds1 {
-  left: 660px;
-  object-fit: cover;
-  position: absolute;
-  bottom: 0;
+  &__layer {
+    position: absolute;
+    top: 0;
+    width: 120%;
+    height: 100%;
+    left: -20%;
   }
+}
+
+.parallax {
+
+  &__image-reviews-sky {
+    object-fit: cover;
+    width: 120%;
+    height: 100%;
+    position: absolute;
+  }
+
+  &__image-reviews-mountain {
+    bottom: 0;
+    position: absolute;
+    width: 130%;
+  }
+
+  &__image-reviews-buddha {
+    bottom: -170px;
+    left: 60%;
+    position: absolute;
+  }
+
+  &__image-reviews-clouds1 {
+    left: 660px;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+  }
+}

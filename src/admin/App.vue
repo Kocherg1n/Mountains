@@ -48,7 +48,7 @@ export default {
 
 <style lang="pcss" scoped>
 @import url("../styles/mixins.pcss");
-@import url("../styles/main2.pcss");
+@import url("../styles/main.pcss");
 
 .skill-section {
   display: flex;

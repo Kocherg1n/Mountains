@@ -11,117 +11,118 @@
   @include tablets {
     padding-top: 5%;
   }
-}
 
-.footer__container {
-  display: flex;
+  &__container {
+    display: flex;
 
-  @include phones {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.footer__info {
-  width: 33%;
-  display: flex;
-
-  @include desktop {
-    flex-direction: column;
-    width: 23%;
+    @include phones {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
-  @include phones {
-    width: 100%;
-  }
-}
+  &__info {
+    width: 33%;
+    display: flex;
 
-.footer__content {
-  flex-grow: 1;
-  margin-left: 8%;
+    @include desktop {
+      flex-direction: column;
+      width: 23%;
+    }
 
-  @include phones {
-    margin-left: 0;
-    margin-top: 40px;
-  }
-}
-
-.footer__copy {
-  opacity: 0.2;
-  font-size: 48px;
-  font-weight: 400;
-  margin-right: 5%;
-  margin-bottom: 42px;
-
-  @include phones {
-    margin-bottom: 22px;
-  }
-}
-
-.footer__user {
-  padding-right: 5%;
-}
-
-.footer__user-site {
-  opacity: 0.2;
-}
-
-.footer__user-name {
-  color: $white;
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-  opacity: 1;
-  margin-bottom: 42px;
-
-  @include phones {
-    margin-bottom: 15px;
-  }
-}
-
-.footer__nav {
-  margin-bottom: 70px;
-
-  @include tablets {
-    margin-bottom: 35px;
-  }
-}
-
-.footer__desc {
-  display: flex;
-
-  @include desktop {
-    justify-content: space-around;
+    @include phones {
+      width: 100%;
+    }
   }
 
-  @include tablets {
-    flex-direction: column;
-  }
-}
+  &__content {
+    flex-grow: 1;
+    margin-left: 8%;
 
-.footer__box {
-  width: 40%;
-  margin-right: 8%;
+    @include phones {
+      margin-left: 0;
+      margin-top: 40px;
+    }
+  }
 
-  @include desktop {
-    width: 100%;
+  &__copy {
+    opacity: 0.2;
+    font-size: 48px;
+    font-weight: 400;
+    margin-right: 5%;
+    margin-bottom: 42px;
+
+    @include phones {
+      margin-bottom: 22px;
+    }
   }
-  
-  @include tablets {
-    width: 90%;
-    margin-bottom: 3%;
+
+  &__user {
+    padding-right: 5%;
   }
-  &:last-child {
-    margin-right: 0;
+
+  &__user-site {
+    opacity: 0.2;
+  }
+
+  &__user-name {
+    color: $white;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 1;
+    margin-bottom: 42px;
+
+    @include phones {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 70px;
+
+    @include tablets {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__desc {
+    display: flex;
+
+    @include desktop {
+      justify-content: space-around;
+    }
+
+    @include tablets {
+      flex-direction: column;
+    }
+  }
+
+  &__box {
+    width: 40%;
+    margin-right: 8%;
+
+    @include desktop {
+      width: 100%;
+    }
+
+    @include tablets {
+      width: 90%;
+      margin-bottom: 3%;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    opacity: 0.2;
+  }
+
+  &__social {
     margin-bottom: 30px;
   }
-}
-
-.footer__text {
-  margin-bottom: 20px;
-  opacity: 0.2;
-}
-
-.footer__social {
-  margin-bottom: 30px;
 }
